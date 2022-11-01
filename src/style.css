@@ -1,0 +1,139 @@
+#root {
+    background: none;
+    color: white;
+}
+
+.header-style {
+    background-color: none;
+    color: white;
+    height:15vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.button-style {
+    font-size: 12px;
+    height: 35px;
+    width: 75px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#logo{
+    font-size: 24px;
+    color: black;
+}
+
+#timer{
+    display: flex;
+}
+
+#clock{
+    font-size: 24px;
+    color: black;
+}
+
+.form-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width:100%;
+    gap:5px;
+}
+
+.form-card{
+    height: 250px;
+    width:150px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-card > input {
+    width: 100px;
+
+}.form-card > textarea {
+    width: 150px;
+    height: 50px;
+}
+
+.summmary-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: black;
+}
+
+.summary-card{
+    font-size: 14px;
+    max-height: 500Px;
+    max-width: 500px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 15px;
+    overflow: auto;
+}
+
+.summary-card > button {
+    align-self: flex-start;
+}
+
+#summary-header{
+    font-size: 24px;
+    margin-bottom: 15px;
+
+}
+
+.history-card{
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.history-card > button {
+    align-self: flex-end;
+    margin-top: 5px;
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+
+}
+
+.history-container{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+#historyCard-header{
+    font-size: 16px;
+}
