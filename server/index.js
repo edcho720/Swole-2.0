@@ -2,53 +2,25 @@ const express = require('express');
 const app = express();
 // Import the mongoose module
 const mongoose = require('mongoose');
+// Authorization:
+const cookie = require('cookie-parser');
+
 const PORT = 1234;
 // connect to mongo via online Atlas
-// const { MongoClient, ServerApiVersion } = require('mongodb');
 const myURI = "mongodb+srv://eddieCho:NPkk5YuXPru85nTJ@workouts.cdqw2dy.mongodb.net/?retryWrites=true&w=majority";
-// const client = new MongoClient(myURI, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-mongoose.connect(myURI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "workouts" })
+mongoose.connect(myURI, { useNewUrlParser: true, useUnifiedTopology: true }) // deleted DB option 'W'
   .then(() => console.log('Connected to MOngoDB'))
   .catch(err => console.log(err));
 
-// eddieCho
-// NPkk5YuXPru85nTJ
-
-// 98.246.147.124/32
-// My IP Address
-
-// mongodb Node.js driver connection string
-// mongodb+srv://eddieCho:NPkk5YuXPru85nTJ@workouts.cdqw2dy.mongodb.net/?retryWrites=true&w=majority
-
-
-const workoutsApi = require('./routes/workouts');
+const workoutApi = require('./routes/workouts');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// For Cookies
+app.use(cookie());
 
-// app.use(express.static(path.join(__dirname, '../src')));
 
-// app.get('/', (req, res) => {
-//   return res
-//     .set('Content-Type', 'text/html')
-//     .status(200) // does not end a req/res cycle on its own
-//     .sendFile(path.join(__dirname, '../src/index.html'));
-// });
-
-// app.get('/style.css', (req, res) => {
-//     return res  
-//       .set('Content-Type', 'text/css')
-//       .status(200)
-//       .sendFile(path.join(__dirname, '../src/style.css'));
-//   });
-
-app.use('/api/workouts', workoutsApi);
+app.use('/api/workouts', workoutApi);
 
 // app.get('/api', (req, res) => {
 //     res.send('hello buddy');
@@ -78,10 +50,11 @@ app.use((err, req, res, next) => {
       const errorObj = Object.assign({}, defaultErr, err); // creating a new error obj
       // with a new label so it has a new reference inside the heap
       console.log(errorObj.log);
+      console.log('error:', err)
       return res.status(errorObj.status).json(errorObj.message);
       // best practice to always end the req/res cycle with return
       // sending back res obj with error details
-    });
+});
   
 
     // server object listens on PORT = 1234

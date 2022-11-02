@@ -3,28 +3,34 @@ const mongoose = require('mongoose');
 
 const router = express.Router();
 
+// Authorization...
+const AuthController = require('../controllers/AuthController');
 const WorkoutController = require('../controllers/WorkoutController');
 
-
-router.post('/', WorkoutController.createWorkout, (req, res) => {
-    console.log("post req");
-    res.status(200).json(res.locals.postedWorkout);
+router.get('/', WorkoutController.getAllWorkouts, (req, res) => {
+    // console.log('GET req body:', req.body);
+    // console.log('GET res body:', res.locals.workouts);
+    if(res.locals.body) console.log('true: res body sent')
+    return res.status(200).json(res.locals.workouts);
 });
 
 router.get('/:id', WorkoutController.getWorkout, (req, res) => {
-    res.status(200).json(res.locals.workout);
+    return res.status(200).json(res.locals.workout);
 });
 
-router.get('/', WorkoutController.getAllWorkouts, (req, res) => {
-    res.status(200).json(res.locals.allWorkouts);
+
+
+router.post('/', WorkoutController.createWorkout, (req, res) => {
+    // console.log("POST req send this res body:", res.locals.postedWorkout);
+    return res.status(200).json(res.locals.postedWorkout);
 });
 
 router.patch('/:id', WorkoutController.updateWorkout, (req, res) => {
-    res.status(200).json(res.locals.updatedWorkout);
+    return res.status(200).json(res.locals.updatedWorkout);
 });
 
 router.delete('/:id', WorkoutController.deleteWorkout, (req, res) => {
-    res.status(200).json(res.locals.deletedWorkout);
+    return res.status(200).json(res.locals.deletedWorkout);
 });
 
 module.exports = router;

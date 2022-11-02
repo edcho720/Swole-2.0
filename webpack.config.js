@@ -1,6 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { start } = require('repl');
+// const { start } = require('repl');
 
 
 
@@ -33,17 +33,20 @@ module.exports = {
             },
             {
                 test: /\.css$/i, 
+                exclude: /node_modules/, 
                 use: [ "style-loader", "css-loader"],
             },
         ]
     },
 
     devServer: {
+        
+        static: {
+            directory: path.join(__dirname, 'dist'),
+            publicPath: '/dist',
+        },
         proxy: {
-           '/': {
-                target: 'http://localhost:8080', 
-                router: () => 'http://localhost:1234', 
-           }
+            '/api/workouts': 'http://localhost:1234'
         }
-    }
+    },
 };

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from './Card'
 import css from '../style.css';
 
 function History(props) {
+
+  const [ togg, setTogg ] = useState(true)
 
     const {
       exercise0,
@@ -47,71 +49,8 @@ function History(props) {
       comments4,
     } = props.formData;
 
-    const body = {
-      exercise0,
-      muscleGroup0,
-      weight0,
-      sets0,
-      reps0,
-      rest0,
-      rir0,
-      comments0,
-      exercise1,
-      muscleGroup1,
-      weight1,
-      sets1,
-      reps1,
-      rest1,
-      rir1,
-      comments1,
-      exercise2,
-      muscleGroup2,
-      weight2,
-      sets2,
-      reps2,
-      rest2,
-      rir2,
-      comments2,
-      exercise3,
-      muscleGroup3,
-      weight3,
-      sets3,
-      reps3,
-      rest3,
-      rir3,
-      comments3,
-      exercise4,
-      muscleGroup4,
-      weight4,
-      sets4,
-      reps4,
-      rest4,
-      rir4,
-      comments4
-    };
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'Application/JSON'
-      },
-      body: JSON.stringify(body)
-    };
-
-    function saveWorkout(e) {
-      e.preventDefault();
-      fetch('/api/workouts', options)
-        .then( res => {
-          res.json();
-        })
-        .then( data => {
-          console.log(data)
-        })
-        .catch(err => console.log('Error:', err));
-
-    };
-
     const { startDate, startTime, endDay, endTime, duration } = props.time
+    const { saveWorkout, darkModeOn } = props
 
     const set1 = Number(sets0)
     const set2 = Number(sets1)
@@ -127,8 +66,9 @@ function History(props) {
   
 
   return ( // bugs -> comments bleed out of div on the right side, made it scroll horizontally for now.
-    <>
-      {startDate && <div className="summary-card">
+    // <div className={darkModeOn ? 'body2' : 'body'}>
+    <div id="hist-cont">
+      {startDate && <div className={darkModeOn ? "summary-card2" : "summary-card"}>
         <div id="summary-header"><b>Workout Summary</b></div>
         <div><b>Date of Workout: </b>{startDate}</div>
         <div><b>Workout Duration: </b>{woDuration && `${woDuration.toFixed(0)} minutes`}</div><br></br>
@@ -146,8 +86,8 @@ function History(props) {
         {muscleGroup4 && <div><b>5th Exercise: </b>{muscleGroup4} | {exercise4} | {weight4}lbs. | {sets4} sets | {reps4} reps | {rest4} sec | {rir4} RIR</div>}
         {comments4 && <div><b>Comments: </b>{comments4}</div>}<br></br>
         <button className="button-style" onClick={saveWorkout}>Save Workout</button>
-      </div>}
-    </>
+      </div>}</div>
+    // </div>
   )
 }
 

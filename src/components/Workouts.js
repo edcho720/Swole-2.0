@@ -1,50 +1,82 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useQuery } from 'react'
 import WorkoutCard from './WorkoutCard'
 
-function Workouts() {
+function Workouts(props) {
 
-  const [fetchedWos, setFetchedWos] = useState({ workouts: [] })
+  const { darkModeOn } = props
 
-    useEffect(() => {
+  const [fetchedWos, setFetchedWos] = useState([])
+  const [ isFetching , setIsFetching ] = useState(true);
+
+  let allWorkouts;
+
+  useEffect(() => {
 
       fetch('/api/workouts')
-        .then(res => res.json()) // expecting an array of objects
-
-
-          // console.log('res json', res)
-          // console.log('res2 json', res)
-        .then(data => {  // data is an array
-
-          console.log('data', data)
-          // if(!Array.isArray(data)) data = [];
-          setFetchedWos(old => {
-            return (
-              { workouts: data }
-            )
-          })
-          console.log("GET data on LOAD:", fetchedWos.workouts);
-        }).catch(err => {
-          console.log('GET on LOAD Error:', err)
+        .then(res => {
+          return (
+            res.json()// expecting an array of objects
+          )
         })
+        .then(data => {
 
+      
+          console.log('this is the data',data)
+
+          setFetchedWos(old => [...data] )
+
+          if(fetchedWos[0]) {
+
+            setIsFetching(false);
+
+            allWorkouts = fetchedWos.map( wo => {
+              return (
+                <WorkoutCard 
+                  darkModeOn={darkModeOn}
+                  workoutData={wo}
+                  removeWorkout={removeWorkout}
+                  editWorkout={editWorkout}
+                />
+            )
+            });
+        }
+        })// data is supposed to be an array, but ret undefined
+        .catch(err => {
+          console.log('GET req error on LOAD Error:', err)
+        })
     }, []); // runs only on first render, don't include it and it will run on every render
 
-    console.log(fetchedWos.workouts)
+    const fetchedData = fetchedWos;
 
-    // const allWorkouts = fetchedWos.workouts.map( wo => {
-    //   return (
-    //     <WorkoutCard 
-    //       workoutData={wo}
-    //     />
-    //   )
-    // })
+    const dataWo = fetchedData.map( wo => {
+
+      console.log(wo._id)
+      return (
+        <WorkoutCard 
+          id={wo._id}
+          darkModeOn={darkModeOn}
+          removeWorkout={removeWorkout}
+          editWorkout={editWorkout}
+          workoutData={wo}
+        />
+      )
+    });
 
 
-  return (
-    <div className="history-container">
-      {/* {allWorkouts} */}
-    </div>
-  )
-}
+  function removeWorkout() {
+      console.log('delete');
+  }
+  
+  function editWorkout() {
+      console.log('edit');
+  }
+
+  console.log('right before the render', dataWo)
+    if(!isFetching) {
+      return (
+        <>{dataWo}</>
+      )
+    };
+};
 
 export default Workouts;

@@ -4,7 +4,7 @@ import FormCard from './FormCard'
 import css from '../style.css';
 
 function Form(props) {
-    const { } = props;
+    const { darkModeOn } = props;
 
     const [formData, setFormData] = useState(
         {
@@ -121,17 +121,20 @@ function Form(props) {
         body: JSON.stringify(postBody)
     };
   
-      function saveWorkout(e) {
+    function handleSave(e) {
+
         e.preventDefault();
+
         console.log('saved')
+
         fetch('/api/workouts', options)
           .then( res => res.json())
           .then( data => {
             console.log(data)
           })
-          .catch(err => console.log(err));
+          .catch(err => console.log('Error:', err));
           
-          setFormData(old => {
+        setFormData(old => {
             return (
                 {
                     exercise0: "",
@@ -174,22 +177,24 @@ function Form(props) {
                     rest4: "",
                     rir4: "",
                     comments4: "",
-                });
-            });
+                }
+            );
+        });
 
-            setTime(old => {
-                return (
-                    {
-                    startDate: '', 
-                    startTime: '', 
-                    endDay: '', 
-                    endTime: '',
-                    duration: 0
-                    }
-                )
-            });
+        setTime(old => {
+            return (
+                {
+                startDate: '', 
+                startTime: '', 
+                endDay: '', 
+                endTime: '',
+                duration: 0
+                }
+            )
+        });
+        setTimer(old => 0);
 
-            setTimer(old => 0);
+        console.log('workout saved')
     };
 
 
@@ -197,20 +202,20 @@ function Form(props) {
     <>
         <form className="form-display" onSubmit={endWorkout}>
 
-            <button className="button-style" onClick={startWorkout}>Start Workout</button><br />
+            <button className="button-style" id="jump-button" onClick={startWorkout}>Start Workout</button><br />
 
                 <div className="form-display">
                     {/* {formCards} */}
-                    <FormCard formData={formData} handleChange={handleChange} />
+                    <FormCard formData={formData} handleChange={handleChange} darkModeOn={darkModeOn} />
                 </div>
                 
-            <button className="button-style" onClick={endWorkout}>End Workout</button>
+            <button className="button-style" id="end-button" onClick={endWorkout}>End Workout</button>
 
         </form>    
         <hr></hr>
         {/* {timer} */}
         <div className="history-container">
-            <History className="history-card" formData={formData} time={time} saveWorkout={saveWorkout} />
+            <History className="history-card" formData={formData} time={time} saveWorkout={handleSave} darkModeOn={darkModeOn}/>
         </div>
     </>
   )

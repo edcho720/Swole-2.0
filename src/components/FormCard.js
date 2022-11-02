@@ -3,11 +3,11 @@ import React from 'react'
 function FormCard(props) {
 
 
-const { formData, handleChange } = props
+const { formData, handleChange, darkModeOn } = props
 
   return (
     <>
-    <div className="form-card">
+    <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup0 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
             id="muscleGroup"
@@ -97,7 +97,7 @@ const { formData, handleChange } = props
         }
         <input
             type="text"
-            placeholder="weight"
+            placeholder="weight in lbs."
             onChange={handleChange}
             name="weight0"
             value={formData.weight0} 
@@ -132,13 +132,13 @@ const { formData, handleChange } = props
         /> 
         <textarea
             value={formData.comments0}
-            placeholder="Comments"
+            placeholder="Comments..."
             onChange={handleChange}
             name="comments0"
         />   
     </div>
 
-    <div className="form-card">
+    <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup1 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
             id="muscleGroup"
@@ -228,7 +228,7 @@ const { formData, handleChange } = props
         }
         <input
             type="text"
-            placeholder="weight"
+            placeholder="weight in lbs."
             onChange={handleChange}
             name="weight1"
             value={formData.weight1} 
@@ -263,13 +263,13 @@ const { formData, handleChange } = props
         /> 
         <textarea
             value={formData.comments1}
-            placeholder="Comments"
+            placeholder="Comments..."
             onChange={handleChange}
             name="comments1"
         />   
     </div>
 
-    <div className="form-card">
+    <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup2 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
             id="muscleGroup"
@@ -359,7 +359,7 @@ const { formData, handleChange } = props
         }
         <input
             type="text"
-            placeholder="weight"
+            placeholder="weight in lbs."
             onChange={handleChange}
             name="weight2"
             value={formData.weight2} 
@@ -394,13 +394,13 @@ const { formData, handleChange } = props
         /> 
         <textarea
             value={formData.comments2}
-            placeholder="Comments"
+            placeholder="Comments..."
             onChange={handleChange}
             name="comments2"
         />   
     </div>
 
-    <div className="form-card">
+    <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup3 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
             id="muscleGroup"
@@ -490,7 +490,7 @@ const { formData, handleChange } = props
         }
         <input
             type="text"
-            placeholder="weight"
+            placeholder="weight in lbs."
             onChange={handleChange}
             name="weight3"
             value={formData.weight3} 
@@ -525,13 +525,13 @@ const { formData, handleChange } = props
         /> 
         <textarea
             value={formData.comments3}
-            placeholder="Comments"
+            placeholder="Comments..."
             onChange={handleChange}
             name="comments3"
         />   
     </div>
 
-    <div className="form-card">
+    <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup4 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
             id="muscleGroup"
@@ -621,7 +621,7 @@ const { formData, handleChange } = props
         }
         <input
             type="text"
-            placeholder="weight"
+            placeholder="weight in lbs."
             onChange={handleChange}
             name="weight4"
             value={formData.weight4} 
@@ -656,7 +656,7 @@ const { formData, handleChange } = props
         /> 
         <textarea
             value={formData.comments4}
-            placeholder="Comments"
+            placeholder="Comments..."
             onChange={handleChange}
             name="comments4"
         />   
