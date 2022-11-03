@@ -1,6 +1,6 @@
 * {
     font-family: 'Karla', sans-serif;
-    color: white;
+    color: floralwhite;
 }
 
 .body {
@@ -10,13 +10,19 @@
     color: white;
     border-radius: 5px;
     margin: none;
+      /* height: 100vh;
+    width: 100%; */
     /* display: flex; */
 }
 
-.history-logo{
-    text-align: center;
-    margin: 100px;
+.body2 {
+    background: rgb(35, 35, 35);
+    border-radius: 5px;
+    margin: none;
+    /* height: 100vh;
+    width: 100%; */
 }
+
 /* #history-box{
     font-size: 48px;
     text-shadow: 2px 2px 5px black; 
@@ -31,31 +37,6 @@
     /* font-family: 'Shadows Into Light', cursive; */
     /* font-family: 'Ubuntu', sans-serif;
 }  */
-
-#history-box{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap:wrap;
-}
-
-.body2 {
-    background: rgb(35, 35, 35);
-    border-radius: 5px;
-    margin: none;
-}
-
-
-.header-style {
-    background-color: none;
-    color: white;
-    height:15vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .button-style {
     font-size: 12px;
@@ -102,75 +83,371 @@
 .button-style:focus{
         outline: none;
     }
-      
 .button-style:active{
         box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
     }
 .button-style3:focus{
         outline: none;
     }
-      
 .button-style3:active{
         box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
     }
 
+
+#clock{
+    font-size: 24px;
+    color:rgb(116, 153, 190);
+}
+#clock2{
+    font-size: 24px;
+    font-weight: 600;
+    color:black;
+}
+
 #end-button {
     background-color: darkred;
 }
-
 #end-button:focus{
     outline: none;
 }
-  
-
 #end-button:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
-
-#toggler1 {
+.form-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width:100%;
+    gap:25px;
+}
+.form-card{
+    height: 250px;
+    width:200px;
+    background-color:rgb(116, 153, 190);
+    /* background: linear-gradient(steelblue, black); */
+    /* background: linear-gradient(darkslategrey, black); */
+    /* background-color: black; */
+    /* background-color:darkslategrey; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     border-radius: 5px;
-    background-color: rgb(83, 83, 100);
-    color: floralwhite;
-    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    border: 1px solid black;
+}
+.form-card2{
+    height: 250px;
+    width:200px;
+    background-color:rgb(83, 83, 100);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 5px 5px 10px black;
+    border: 1px solid black;
+}
+.form-card > input {
     width: 100px;
-    height: 50px;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-#toggler1:focus{
-    outline: none;
-}
-  
-#toggler1:active{
-    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
-}
-
-#toggler2 {
     border-radius: 5px;
+    text-align: center;
+    color: black;
+
+}
+.form-card > textarea {
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+}
+.form-card > select {
+    width: 110px;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+}
+.form-card2 > input {
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    background: rgb(35, 35, 35);
+    color: floralwhite;
+}
+.form-card2 > textarea {
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(35, 35, 35);
+    color: floralwhite;
+}
+.form-card2 > select {
+    width: 110px;
+    border-radius: 5px;
+    text-align: center;
+    background: rgb(35, 35, 35);
+    color: floralwhite;
+}
+
+.header-style {
+    background-color: none;
+    color: white;
+    height:15vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.history-logo{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+#history-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap:wrap;
+}
+.history-card{
+    font-size: 14px;
     background-color: rgb(116, 153, 190);
+    color: white;
+    max-height: 600px;
+    max-width: 600px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    margin: 25px;
+    border: 1px solid black;
+    padding: 15px;
+}
+.history-card > textarea{
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 25px;
+}
+.history-card2 > textarea{
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(35, 35, 35);
     color: floralwhite;
-    cursor: pointer;
-    width: 100px;
-    height: 50px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 25px;
+}
+.history-card2{
+    font-size: 12px;
+    background-color:rgb(83, 83, 100);
+    color: white;
+    max-height: 600px;
+    max-width: 600px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    margin: 25px;
+    border: 1px solid black;
+    padding: 15px;
+}
+.history-card > button {
+    align-self: flex-end;
+    margin-top: 5px;
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+}
+.history-card2 > button {
+    align-self: flex-end;
+    margin-top: 5px;
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+}
+/* #hist-cont{
+    display: flex;
+} */
+#historyCard-header{
     font-size: 16px;
-}
-
-#toggler2:focus{
-    outline: none;
-}
-  
-#toggler2:active{
-    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
 .links{
     display: flex;
     justify-content: space-between;
+}
+.login-box{
+    display: flex;
+    margin-top: 25px;
+}
+#login-container{
+    height: 500px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login > input{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+.login2 > input{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    border: 1px solid black;
+    background-color:rgb(83, 83, 100);
+    color: white;
+}
+
+.login > input{
+    background: rgb(35, 35, 35);
+    color: floralwhite;
+}
+.login2 > input{
+    color: black;
+}
+.login2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    border: 1px solid black;
+    background-color:rgb(116, 153, 190);
+    color: white;
+}
+#login-button {
+    border-radius: 5px;
+    background-color:rgb(116, 153, 190);
+    color: white;
+    cursor: pointer;
+    width: 75px;
+    height: 25px;
+    margin: 10px 5px;
+    font-size: 16px;
+    border: 1px solid black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#login-button:focus{
+    outline: none;
+}
+  
+#login-button:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+#login-button2 {
+    border-radius: 5px;
+    background-color: rgb(83, 83, 100);
+    color: floralwhite;
+    cursor: pointer;
+    width: 75px;
+    height: 25px;
+    margin: 10px 5px;
+    font-size: 16px;
+    border: 1px solid black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#login-button2:focus{
+    outline: none;
+}
+#login-button2:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+#logo{
+    font-size: 69px;
+    text-shadow: 2px 2px 5px black; 
+    color:rgb(83, 83, 100);
+    /* font-family: 'Shadows Into Light', cursive; */
+    font-family: 'Ubuntu', sans-serif;
+}
+#logo2{
+    font-size: 69px;
+    text-shadow: 2px 2px 5px black; 
+    color:rgb(116, 153, 190);
+    /* font-family: 'Shadows Into Light', cursive; */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#navbar {
+    background-color:floralwhite;
+    color: white;
+    border-radius: 5px;
+    margin: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    gap: 25px;
+}
+#navbar2 {
+    background: rgb(35, 35, 35);
+    border-radius: 5px;
+    margin: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    gap: 25px;
 }
 
 .sublinks-box {
@@ -179,7 +456,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
 .sub-links {
 /*     display: flex;
     justify-content: space-between; */
@@ -225,255 +501,17 @@
 .sub-links2:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
-
-.login-box{
-    display: flex;
-    margin-top: 25px;
-}
-
-#login-container{
-    height: 500px;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.login > input{
-    width: 200px;
-    height: 25px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    border: 1px solid black;
-    text-align: center;
-}
-.login2 > input{
-    width: 200px;
-    height: 25px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    border: 1px solid black;
-    text-align: center;
-}
-
-.login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 250px;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    border: 1px solid black;
-    background-color:rgb(83, 83, 100);
-    color: white;
-    
-}
-
-.login > input{
-    background: rgb(35, 35, 35);
-    color: floralwhite;
-}
-.login2 > input{
-    color: black;
-}
-
-.login2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 250px;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    border: 1px solid black;
-    background-color:rgb(116, 153, 190);
-    color: white;
-}
-
-#login-button {
-    border-radius: 5px;
-    background-color:rgb(116, 153, 190);
-    color: white;
-    cursor: pointer;
-    width: 75px;
-    height: 25px;
-    margin: 10px 5px;
-    font-size: 16px;
-    border: 1px solid black; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#login-button:focus{
-    outline: none;
-}
-  
-#login-button:active{
-    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
-}
-#login-button2 {
-    border-radius: 5px;
-    background-color: rgb(83, 83, 100);
-    color: floralwhite;
-    cursor: pointer;
-    width: 75px;
-    height: 25px;
-    margin: 10px 5px;
-    font-size: 16px;
-    border: 1px solid black; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#login-button2:focus{
-    outline: none;
-}
-  
-#login-button2:active{
-    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
-}
-
-
-#logo{
-    font-size: 48px;
-    text-shadow: 2px 2px 5px black; 
-    color:rgb(83, 83, 100);
-    /* font-family: 'Shadows Into Light', cursive; */
-    font-family: 'Ubuntu', sans-serif;
-}
-#logo2{
-    font-size: 48px;
-    text-shadow: 2px 2px 5px black; 
-    color:rgb(116, 153, 190);
-    /* font-family: 'Shadows Into Light', cursive; */
-    font-family: 'Ubuntu', sans-serif;
-}
-
-#timer{
-    display: flex;
-}
-
-#clock{
-    font-size: 24px;
-    color:rgb(116, 153, 190);
-}
-#clock2{
-    font-size: 24px;
-    font-weight: 600;
-    color:black;
-}
-
-.form-display{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    width:100%;
-    gap:25px;
-}
-
-.form-card{
-    height: 250px;
-    width:200px;
-    background-color:rgb(116, 153, 190);
-    /* background: linear-gradient(steelblue, black); */
-    /* background: linear-gradient(darkslategrey, black); */
-    /* background-color: black; */
-    /* background-color:darkslategrey; */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    border: 1px solid black;
-}
-
-.form-card2{
-    height: 250px;
-    width:200px;
-    background-color:rgb(83, 83, 100);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-    box-shadow: 5px 5px 10px black;
-    border: 1px solid black;
-}
-
-.form-card > input {
-    width: 100px;
-    border-radius: 5px;
-    text-align: center;
-    color: black;
-
-}
-.form-card > textarea {
-    width: 150px;
-    height: 25px;
-    text-align: center;
-    border-radius: 5px;
-    color: black;
-}
-.form-card > select {
-    width: 110px;
-    border-radius: 5px;
-    text-align: center;
-    color: black;
-}
-.form-card2 > input {
-    width: 100px;
-    border-radius: 5px;
-    text-align: center;
-    background: rgb(35, 35, 35);
-    color: floralwhite;
-
-}
-.form-card2 > textarea {
-    width: 150px;
-    height: 25px;
-    text-align: center;
-    border-radius: 5px;
-    background: rgb(35, 35, 35);
-    color: floralwhite;
-}
-.form-card2 > select {
-    width: 110px;
-    border-radius: 5px;
-    text-align: center;
-    background: rgb(35, 35, 35);
-    color: floralwhite;
-}
-
 .summmary-container{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-
+#summary-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .summary-card{
     font-size: 14px;
     max-height: 500Px;
@@ -492,7 +530,6 @@
     margin: 25px;
     border: 1px solid black;
 }
-
 .summary-card2{
     font-size: 14px;
     max-height: 500Px;
@@ -511,100 +548,52 @@
     margin: 25px;
     border: 1px solid black;
 }
-
 .summary-card > button {
     align-self: flex-start;
 }
 .summary-card2 > button {
     align-self: flex-start;
 }
-
 #summary-header{
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.history-card{
-    font-size: 14px;
-    background-color: rgb(116, 153, 190);
-    color: white;
-    max-height: 600px;
-    max-width: 600px;
-    border-radius: 10px;
+#timer{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    margin: 25px;
-    border: 1px solid black;
-    padding: 15px;
 }
-
-.history-card > textarea{
-    width: 150px;
-    height: 25px;
-    text-align: center;
+#toggler1 {
     border-radius: 5px;
-    color: black;
-    margin-bottom: 10px;
-    width: 250px;
-    height: 25px;
-}
-
-.history-card2 > textarea{
-    width: 150px;
-    height: 25px;
-    text-align: center;
-    border-radius: 5px;
-    background: rgb(35, 35, 35);
+    background-color: rgb(83, 83, 100);
     color: floralwhite;
-    margin-bottom: 10px;
-    width: 250px;
-    height: 25px;
-}
-
-
-.history-card2{
-    font-size: 12px;
-    background-color:rgb(83, 83, 100);
-    color: white;
-    max-height: 600px;
-    max-width: 600px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    margin: 25px;
-    border: 1px solid black;
-    padding: 15px;
-}
-
-.history-card > button {
-    align-self: flex-end;
-    margin-top: 5px;
-    height: 20px;
-    width: 50px;
-    font-size: 10px;
-
-}
-.history-card2 > button {
-    align-self: flex-end;
-    margin-top: 5px;
-    height: 20px;
-    width: 50px;
-    font-size: 10px;
-
-}
-
-#hist-cont{
-    display: flex;
-}
-
-
-
-#historyCard-header{
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
     font-size: 16px;
+}
+#toggler1:focus{
+    outline: none;
+}
+  
+#toggler1:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+#toggler2 {
+    border-radius: 5px;
+    background-color: rgb(116, 153, 190);
+    color: floralwhite;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+#toggler2:focus{
+    outline: none;
+} 
+#toggler2:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }

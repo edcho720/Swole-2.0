@@ -66,11 +66,11 @@ function History(props) {
   
 
   return ( // bugs -> comments bleed out of div on the right side, made it scroll horizontally for now.
-    // <div className={darkModeOn ? 'body2' : 'body'}>
-    <div id="hist-cont">
-      {startDate && <div className={darkModeOn ? "summary-card2" : "summary-card"}>
-        <div id="summary-header"><b>Workout Summary</b></div>
-        <div><b></b>{startDate}</div>
+    <div className={darkModeOn ? 'body2' : 'body'} id="summary-box">
+
+      {startDate && <><div className={darkModeOn ? "summary-card2" : "summary-card"}>
+        <p id="summary-header"><b>Workout Summary</b></p>
+        <div><b>{startDate}</b></div>
         <div><b>Workout Duration: </b>{woDuration && `${woDuration.toFixed(0)} minutes`}</div><br></br>
         <div><b>Sets: </b>{`${sets0 && sets0 + ' +'} ${sets1 && sets1 + ' +'} ${sets2 && sets2 + ' +'} ${sets3 && sets3 + ' +'} ${sets4 && sets4}`}</div>
         <div><b>Reps: </b>{`${reps0 && reps0 + ' +'} ${reps1 && reps1 + ' +'} ${reps2 && reps2 + ' +'} ${reps3 && reps3 + ' +'} ${reps4 && reps4}`}</div>
@@ -86,8 +86,9 @@ function History(props) {
         {muscleGroup4 && <div><b>5th Exercise: </b>{muscleGroup4} | {exercise4} | {weight4}lbs. | {sets4} sets | {reps4} reps | {rest4} sec | {rir4} RIR</div>}
         {comments4 && <div><b>Comments: </b>{comments4}</div>}<br></br>
         <button className="button-style" onClick={saveWorkout}>Save Workout</button>
-      </div>}</div>
-    // </div>
+      </div><hr></hr></>}
+    </div>
+
   )
 }
 

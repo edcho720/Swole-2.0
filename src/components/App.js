@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Route, Routes, Link } from 'react-router-dom'
 import Workouts from './Workouts'
-import Header from './Header'
+// import Header from './Header'
 import Form from './Form'
 import Login from './Login'
-import Links from './Links'
+// import Links from './Links'
+import About from './About'
+import Error from './Error'
 import css from '../style.css';
 
 
@@ -43,58 +45,46 @@ function App() {
     setTimer(old => null); 
   }
 
-  return (
-      <>
-              <Login darkModeOn={darkModeOn}/>
-              <div className={darkModeOn ? 'body2' : 'body'}>
-                <Links 
-                  darkModeOn={darkModeOn} 
-                  toggleDarkMode={toggleDarkMode} 
-                />
-                <Header 
-                  className="header-container" 
-                  timer={timer}
-                  showTimer={showTimer} 
-                  startTimer={startTimer} 
-                  resetTimer={resetTimer}
-                  endTimer={endTimer}
-                  toggle={toggle}
-                  timerOn={timerOn}
-                  darkModeOn={darkModeOn}
-                />
-                <Form darkModeOn={darkModeOn}/>
-                <Workouts darkModeOn={darkModeOn}/>
-              </div>
-      </>
-    // <Routes>
-    //   <>
-    //     <Route path='./login' element={<Login darkModeOn={darkModeOn}/>} /> 
-    //     <Route exact path='/' element={
-    //       <div className={darkModeOn ? 'body2' : 'body'}>
-    //         <Links 
-    //           darkModeOn={darkModeOn} 
-    //           toggleDarkMode={toggleDarkMode} 
-    //         />
-    //         <Header 
-    //           className="header-container" 
-    //           timer={timer}
-    //           showTimer={showTimer} 
-    //           startTimer={startTimer} 
-    //           resetTimer={resetTimer}
-    //           endTimer={endTimer}
-    //           toggle={toggle}
-    //           timerOn={timerOn}
-    //           darkModeOn={darkModeOn}
-    //         />
-    //         <Form darkModeOn={darkModeOn}/>
-    //       </div>
-    //       } 
-    //     />
-    //     <Route path='/login' element={<Login darkModeOn={darkModeOn}/>} /> 
-    //     <Route path='/history' element={<Workouts darkModeOn={darkModeOn}/>} /> 
-    //   </> 
-    // </Routes>
+  // '/api/workouts' //
 
+  return (
+              <>
+                <nav id={darkModeOn ? 'navbar2' : 'navbar'}>
+                    <Link to="/about"><button className={darkModeOn ? "sub-links" : "sub-links2"}>About</button></Link>
+                    <Link to="/main"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Main</button></Link>
+                    <Link to="/history"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Workout History</button></Link>
+                    <Link to="/"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Log-in</button></Link>
+                </nav>
+                <Login darkModeOn={darkModeOn}/>
+                <Form 
+                    timer={timer}
+                    showTimer={showTimer} 
+                    startTimer={startTimer} 
+                    resetTimer={resetTimer}
+                    endTimer={endTimer}
+                    toggle={toggle}
+                    timerOn={timerOn}
+                    toggleDarkMode={toggleDarkMode} 
+                    darkModeOn={darkModeOn}/>
+                <Workouts darkModeOn={darkModeOn}/>
+
+              {/* <Routes>
+                    <Route path='/' element={<Login darkModeOn={darkModeOn}/>} /> 
+                    <Route path='/about' element={About} />
+                    <Route element={Error} />
+                    <Route path='/history' element={<Workouts darkModeOn={darkModeOn}/>} />
+                    <Route path='/main' element={<Form 
+                    timer={timer}
+                    showTimer={showTimer} 
+                    startTimer={startTimer} 
+                    resetTimer={resetTimer}
+                    endTimer={endTimer}
+                    toggle={toggle}
+                    timerOn={timerOn}
+                    toggleDarkMode={toggleDarkMode} 
+                    darkModeOn={darkModeOn}/>} />
+              </Routes> */}
+              </>
     )
   };
 export default App;

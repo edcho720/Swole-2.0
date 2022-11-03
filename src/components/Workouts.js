@@ -64,24 +64,6 @@ function Workouts(props) {
       )
       });
   };
-  
-  // function editWorkout(id) {
-  //     console.log('PATCH FIRED!');
-
-  //     fetch(`/api/workouts/${id}`, { 
-  //       method: 'PATCH',
-  //       body: JSON.stringify({
-  //         comments0: 
-  //       }),
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       }, 
-  //     })
-  //     .then(res => res.json())
-  //     .then((data) => {console.log('Update successful:', data)})
-  //     .catch(err => console.log('Error:', err))
-  // }
-
 
 for(let i = 0; i < dataWo.length; i++) {
   // console.log(dataWo[i])
@@ -91,10 +73,10 @@ for(let i = 0; i < dataWo.length; i++) {
   // console.log('right before the render', dataWo)
     if(!isFetching) {
       return (
-        <>
-        <div className="history-logo" id={darkModeOn ? "logo" : "logo2"}>Workout History</div>
-        <div id="history-box">{dataWo}</div>
-        </>
+        <div className={darkModeOn ? 'body2' : 'body'}>
+          <div className="history-logo" id={darkModeOn ? "logo" : "logo2"}>Workout History</div>
+          <div id="history-box">{dataWo}</div>
+        </div>
       )
     };
 };

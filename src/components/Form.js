@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import History from './History'
 import FormCard from './FormCard'
+import { Link } from 'react-router-dom'
 import css from '../style.css';
-import { useRouteLoaderData } from 'react-router-dom';
+import Links from './Links'
 
 function Form(props) {
-    const { darkModeOn } = props;
+
+    const { timerOn, timer, showTimer, startTimer, endTimer, resetTimer, toggle, darkModeOn, toggleDarkMode } = props;
 
     const [formData, setFormData] = useState(
         {
@@ -62,7 +64,7 @@ function Form(props) {
         }
     );
 
-    const [ timer, setTimer ] = useState(0)
+    const [ timer1, setTimer1 ] = useState(0)
 
 
     function startWorkout(e) {
@@ -71,7 +73,7 @@ function Form(props) {
         const startT = new Date().toTimeString();
 
         setInterval(() => {
-            setTimer(old => old + 1);
+            setTimer1(old => old + 1);
         }, 1000)
 
         console.log('start', startT)
@@ -193,7 +195,7 @@ function Form(props) {
                 }
             )
         });
-        setTimer(old => 0);
+        setTimer1(old => 0);
 
         console.log('workout saved');
         location.reload();
@@ -201,13 +203,37 @@ function Form(props) {
 
 
   return (
-    <>
+
+<>
+    
+    <div className={darkModeOn ? 'body2' : 'body'} >
+      <div className="links">
+        <button id={darkModeOn ? 'toggler1' : 'toggler2'} onClick={toggleDarkMode} >{darkModeOn ? 'Light Mode' : 'Dark Mode'} </button>
+        <div className="sublinks-box">
+          <Link to="/about"><button className={darkModeOn ? "sub-links" : "sub-links2"}>About</button></Link>
+          <Link to="/history"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Workout History</button></Link>
+        </div>
+    
+    </div>  
+    <div className="header-style">
+      <div id={darkModeOn ? "logo" : "logo2"}>Swole</div>
+      <div id="timer">
+        <button className="button-style" onClick={showTimer}>{!toggle ? 'Show Timer' : 'Start Timer'}</button><br />
+        {!toggle && timer === 0 && <button className="button-style" onClick={startTimer}>Start Timer</button>}<br />
+        <button className="button-style" onClick={resetTimer}>Reset Timer</button><br />
+        <button className="button-style" id="end-button" onClick={endTimer}>End Timer</button><br /><br />
+      </div>
+      <div id={darkModeOn ? "clock" : "clock2"}>{timerOn && `Seconds elapsed: ${timer}`}</div>
+    </div>
+  </div>
+    <div className={darkModeOn ? 'body2' : 'body'}>
+
+
         <form className="form-display" onSubmit={endWorkout}>
 
             <button className="button-style" id="jump-button" onClick={startWorkout}>Start Workout</button><br />
 
                 <div className="form-display">
-                    {/* {formCards} */}
                     <FormCard formData={formData} handleChange={handleChange} darkModeOn={darkModeOn} />
                 </div>
                 
@@ -215,10 +241,9 @@ function Form(props) {
 
         </form>    
         <hr></hr>
-        {/* {timer} */}
-        <div className="history-container">
+
             <History className="history-card" formData={formData} time={time} saveWorkout={handleSave} darkModeOn={darkModeOn}/>
-        </div>
+    </div>
     </>
   )
 }
