@@ -528,8 +528,8 @@
     font-size: 14px;
     background-color: rgb(116, 153, 190);
     color: white;
-    height: 500px;
-    width: 500px;
+    max-height: 600px;
+    max-width: 600px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -538,6 +538,7 @@
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
     margin: 25px;
     border: 1px solid black;
+    padding: 15px;
 }
 
 .history-card > textarea{
@@ -568,8 +569,8 @@
     font-size: 12px;
     background-color:rgb(83, 83, 100);
     color: white;
-    height: 400px;
-    width: 400px;
+    max-height: 600px;
+    max-width: 600px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -578,6 +579,7 @@
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
     margin: 25px;
     border: 1px solid black;
+    padding: 15px;
 }
 
 .history-card > button {
