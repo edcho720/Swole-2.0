@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import History from './History'
 import FormCard from './FormCard'
 import css from '../style.css';
+import { useRouteLoaderData } from 'react-router-dom';
 
 function Form(props) {
     const { darkModeOn } = props;
@@ -194,7 +195,8 @@ function Form(props) {
         });
         setTimer(old => 0);
 
-        console.log('workout saved')
+        console.log('workout saved');
+        location.reload();
     };
 
 

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
+import { useRouteLoaderData } from 'react-router-dom';
 
 function WorkoutCard(props) {
 
@@ -49,9 +50,27 @@ const {
   endTime,
   duration,
   _id, 
-  } = workoutData.props
+  } = props.workoutData
 
-console.log('workoutcard data', workoutData)
+const [ editInfo, setEditInfo ] = useState({comments4: comments4});
+const [ editOn, setEditOn ] = useState(false);
+
+function handleChange(e) {
+  const {name, value, type, checked} = e.target;
+  setEditInfo(oldData => {
+      return (
+          {
+          ...oldData,
+          [name]: type === "checkbox" ? checked : value
+          }
+      )
+  })
+};
+
+
+
+console.log('editInfo:', editInfo.comments4)
+console.log('workoutcard id', _id)
 
 const set1 = Number(sets0)
 const set2 = Number(sets1)
@@ -63,14 +82,51 @@ const sum = [set1, set2, set3, set4, set5]
 const sumSets = sum.reduce((a, b) => a + b)
 const woDuration = duration;
 
-const { darkModeOn } = props
+const { darkModeOn, removeWorkout } = props;
+
+// if(!props.workoutData) {
+//   return  <p>No workouts yet</p>
+// }
+function handleEdit(id) {
+  console.log('edit fired!')
+  setEditOn(true);
+}
+
+
+function handleUpdate(id) {
+  console.log('PATCH FIRED!');
+  console.log('editInfo:', editInfo.comments4);
+
+  fetch(`/api/workouts/${id}`, { 
+    method: 'PATCH',
+    body: JSON.stringify({
+      comments4: editInfo.comments4,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    }, 
+  })
+  .then(res => res.json())
+  .then((data) => {
+
+    console.log('Update successful:', data.comments4);
+
+  })
+  .catch(err => console.log('Error:', err))
+
+  setEditInfo({comments4: ""})
+  setEditOn(false);
+  location.reload();
+}
 
 
   return (
+
+
     <div className={darkModeOn ? 'body2' : 'body'}>
         <div className={darkModeOn ? "history-card2" : "history-card"}>
 
-            <div id="historyCard-header"><b>Date of Workout: </b>{startDate}</div>
+            <div id="historyCard-header"><b></b><h2>{startDate}</h2></div>
             <div><b>Workout Duration: </b>{woDuration && `${woDuration.toFixed(0)} minutes`}</div><br></br>
             <div><b>Sets: </b>{`${sets0 && sets0 + ' +'} ${sets1 && sets1 + ' +'} ${sets2 && sets2 + ' +'} ${sets3 && sets3 + ' +'} ${sets4 && sets4}`}</div>
             <div><b>Reps: </b>{`${reps0 && reps0 + ' +'} ${reps1 && reps1 + ' +'} ${reps2 && reps2 + ' +'} ${reps3 && reps3 + ' +'} ${reps4 && reps4}`}</div>
@@ -86,8 +142,18 @@ const { darkModeOn } = props
             <div><b>5th Exercise: </b>{muscleGroup4} | {exercise4} | {weight4}lbs. | {sets4} sets | {reps4} reps | {rest4} sec | {rir4} RIR</div>
             <div><b>Comments: </b>{comments4}</div><br></br>
 
-            <button className="button-style" id="end-button" onClick={removeWorkout}>Remove</button>
-            <button className="button-style" onClick={editWorkout}>Edit</button>
+            <button className="button-style" id="end-button" onClick={() => removeWorkout(_id)}>Remove</button>
+
+            {!editOn && <button className="button-style" onClick={() => handleEdit(_id)}>Edit</button>}
+            {editOn && <button className="button-style3" onClick={() => handleUpdate(_id)}>Update</button>}
+
+            {editOn && <textarea
+            value={editInfo.comments4}
+            placeholder="Edit comments..."
+            onChange={handleChange}
+            name="comments4"
+            />}
+
         </div>
     </div>
   )

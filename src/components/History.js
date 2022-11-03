@@ -70,7 +70,7 @@ function History(props) {
     <div id="hist-cont">
       {startDate && <div className={darkModeOn ? "summary-card2" : "summary-card"}>
         <div id="summary-header"><b>Workout Summary</b></div>
-        <div><b>Date of Workout: </b>{startDate}</div>
+        <div><b></b>{startDate}</div>
         <div><b>Workout Duration: </b>{woDuration && `${woDuration.toFixed(0)} minutes`}</div><br></br>
         <div><b>Sets: </b>{`${sets0 && sets0 + ' +'} ${sets1 && sets1 + ' +'} ${sets2 && sets2 + ' +'} ${sets3 && sets3 + ' +'} ${sets4 && sets4}`}</div>
         <div><b>Reps: </b>{`${reps0 && reps0 + ' +'} ${reps1 && reps1 + ' +'} ${reps2 && reps2 + ' +'} ${reps3 && reps3 + ' +'} ${reps4 && reps4}`}</div>

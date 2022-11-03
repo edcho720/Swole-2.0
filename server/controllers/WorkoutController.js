@@ -3,33 +3,20 @@ const mongoose = require('mongoose');
 
 const WorkoutController = {};
 
-WorkoutController.getWorkout = function(req, res, next) {
-
-    const workoutToFind = { id: req.params.id } // this may cause problems...
-
-    console.log('get req data by ID', workoutToFind)
-
-
-    Workout.find(workoutToFind)
-        .then(result => {
-            res.locals.workout = result;
-            return next()
-        })
-        .catch(err => next(err));
-};
+// WorkoutController.getWorkout = function(req, res, next) {
+//     const workoutToFind = { id: req.params.id } // this may cause problems...
+//     Workout.find(workoutToFind)
+//         .then(result => {
+//             res.locals.workout = result;
+//             return next()
+//         })
+//         .catch(err => next(err));
+// };
 
 WorkoutController.getAllWorkouts = function(req, res, next) {
-
-    // if(typeof req !== 'object' ) console.log('req not an obj')
-
-    // console.log('controller fired:')
-
     Workout.find({})
         .then(result => {
-            // console.log('result:', result)
-            // console.log('req.body:', req.body)
             res.locals.workouts = result;// results is an array of objects
-            // console.log('res locals:', res.locals.workouts)
             return next()
         })
         .catch(err => next(err));
@@ -37,9 +24,6 @@ WorkoutController.getAllWorkouts = function(req, res, next) {
 
 
 WorkoutController.createWorkout = function(req, res, next) {
-
-    // console.log('POST controlller req received:', req.body)
-
     const {
             exercise0,
             muscleGroup0,
@@ -136,25 +120,25 @@ WorkoutController.createWorkout = function(req, res, next) {
         duration }
         )
         .then( result => { // not getting the result back from CREATE method
-
-            // console.log(' POST controller result', result)
-
             res.locals.postedWorkout = result;
             return next();
         })
         .catch(err => next(err));
 };
 
-
 WorkoutController.updateWorkout = function(req, res, next) {
 
-    const workoutToFind = { id: req.params.id } // this may cause problems...
+    console.log(req.params.id)
+    console.log(req.body.comments4)
 
-    const newWorkoutInfo = { id: req.body.id } // this only allows a specific change field
+    const workoutToFind = { _id: req.params.id } // this may cause problems...
 
-    Workout.findOneAndUpdate(workoutToFind, newWorkoutInfo, { new: true })// options object sends back updated doc from db
+    const newWorkoutInfo = { comments4: req.body.comments4 } // this only allows a specific change field
+
+    Workout.findOneAndUpdate(workoutToFind, newWorkoutInfo)// options object sends back updated doc from db
         .then(result => {
             res.locals.updatedWorkout = result;
+            console.log('result:', result)
             return next()
         })
         .catch(err => next(err));
@@ -162,9 +146,9 @@ WorkoutController.updateWorkout = function(req, res, next) {
 
 WorkoutController.deleteWorkout = function(req, res, next) {
 
-    const workoutToDelete = { id: req.params.id } // this may cause problems...
+    const workoutToDelete = { _id: req.params.id } // this may cause problems...
 
-    Workout.findOneAndDelete(workoutToDelete/* , { new: true } */ )
+    Workout.findOneAndDelete(workoutToDelete, { new: true })
         .then(result => {
             res.locals.deletedWorkout = result;
             return next()

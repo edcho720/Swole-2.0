@@ -65,7 +65,6 @@ function App() {
                 <Form darkModeOn={darkModeOn}/>
                 <Workouts darkModeOn={darkModeOn}/>
               </div>
-              {/* <Workouts darkModeOn={darkModeOn}/> */}
       </>
     // <Routes>
     //   <>
@@ -98,7 +97,4 @@ function App() {
 
     )
   };
-
-
-
 export default App;
