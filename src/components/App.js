@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
 import Workouts from './Workouts'
-// import Header from './Header'
 import Form from './Form'
 import Login from './Login'
-// import Links from './Links'
 import About from './About'
 import Error from './Error'
 import css from '../style.css';

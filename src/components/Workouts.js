@@ -68,8 +68,6 @@ function Workouts(props) {
 for(let i = 0; i < dataWo.length; i++) {
   // console.log(dataWo[i])
 }
-
-
   // console.log('right before the render', dataWo)
     if(!isFetching) {
       return (

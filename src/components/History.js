@@ -86,7 +86,7 @@ function History(props) {
         {muscleGroup4 && <div><b>5th Exercise: </b>{muscleGroup4} | {exercise4} | {weight4}lbs. | {sets4} sets | {reps4} reps | {rest4} sec | {rir4} RIR</div>}
         {comments4 && <div><b>Comments: </b>{comments4}</div>}<br></br>
         <button className="button-style" onClick={saveWorkout}>Save Workout</button>
-      </div><hr></hr></>}
+      </div></>}
     </div>
 
   )

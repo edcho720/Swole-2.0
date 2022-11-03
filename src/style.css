@@ -121,6 +121,7 @@
     height: 300px;
     width:100%;
     gap:25px;
+    margin-bottom: 50px;
 }
 .form-card{
     height: 250px;
@@ -208,12 +209,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding-bottom:50px;
 }
 
 .history-logo{
     text-align: center;
     padding-top: 100px;
     padding-bottom: 50px;
+    
 }
 #history-box{
     display: flex;
@@ -225,8 +228,9 @@
     font-size: 14px;
     background-color: rgb(116, 153, 190);
     color: white;
-    max-height: 600px;
-    max-width: 600px;
+    max-height: 500px;
+    max-width: 500px;
+    min-width: 500px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -262,8 +266,9 @@
     font-size: 12px;
     background-color:rgb(83, 83, 100);
     color: white;
-    max-height: 600px;
-    max-width: 600px;
+    max-height: 500px;
+    max-width: 500px;
+    min-width: 500px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -293,6 +298,11 @@
 } */
 #historyCard-header{
     font-size: 16px;
+}
+#history-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .links{
@@ -419,6 +429,7 @@
     color:rgb(83, 83, 100);
     /* font-family: 'Shadows Into Light', cursive; */
     font-family: 'Ubuntu', sans-serif;
+    padding-bottom: 100px;
 }
 #logo2{
     font-size: 69px;
@@ -426,6 +437,7 @@
     color:rgb(116, 153, 190);
     /* font-family: 'Shadows Into Light', cursive; */
     font-family: 'Ubuntu', sans-serif;
+    padding-bottom: 100px;
 }
 
 #navbar {
@@ -516,6 +528,7 @@
     font-size: 14px;
     max-height: 500Px;
     max-width: 500px;
+    min-width: 300px;
     background-color: rgb(116, 153, 190);
     color:white;
     border-radius: 5px;
@@ -534,6 +547,7 @@
     font-size: 14px;
     max-height: 500Px;
     max-width: 500px;
+    min-width: 300px;
     background-color:rgb(83, 83, 100);
     color:white;
     border-radius: 5px;
