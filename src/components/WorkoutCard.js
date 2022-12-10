@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useRouteLoaderData } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function WorkoutCard(props) {
 
@@ -84,6 +84,8 @@ const woDuration = duration;
 
 const { darkModeOn, removeWorkout } = props;
 
+const navigate = useNavigate()
+
 // if(!props.workoutData) {
 //   return  <p>No workouts yet</p>
 // }
@@ -116,7 +118,10 @@ function handleUpdate(id) {
 
   setEditInfo({comments4: ""})
   setEditOn(false);
-  location.reload();
+  
+  setTimeout(() => {
+    navigate('./')
+  }, 5000)
 }
 
 

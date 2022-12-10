@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Login(props) {
 
@@ -19,8 +19,18 @@ function Login(props) {
         })
     };
 
+    const navigate = useNavigate()
+
+    function goToMain() {
+        navigate('./main')
+      }
+
   return (
+<>
+    <div id={darkModeOn ? "logo" : "logo2"} className={darkModeOn ? 'body2' : 'body'}>Swole</div>
     <div id="login-container" className={darkModeOn ? 'body2' : 'body'}>
+
+    
         <div className={darkModeOn ? 'login' : 'login2'}>
             <label htmlFor="user">Username: </label>
             <input
@@ -41,11 +51,13 @@ function Login(props) {
                 value={loginForm.pass} 
             />
             <div className="login-box">
-                <div id={darkModeOn ? "login-button" : "login-button2"}>Log-in</div>
+                <div id={darkModeOn ? "login-button" : "login-button2"} onClick={goToMain}>Log-in</div>
                 <div id={darkModeOn ? "login-button" : "login-button2"}>Sign-up</div>
             </div>  
         </div>
       </div>  
+      </>
+
   )
 }
 

@@ -8,7 +8,7 @@ const PORT = 1234;
 // connect to mongo via online Atlas
 const myURI = "mongodb+srv://eddieCho:NPkk5YuXPru85nTJ@workouts.cdqw2dy.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(myURI, { useNewUrlParser: true, useUnifiedTopology: true }) // deleted DB option 'W'
-  .then(() => console.log('Connected to MOngoDB'))
+  .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log(err));
 
 const workoutApi = require('./routes/workouts');
@@ -34,7 +34,7 @@ app.use((err, req, res, next) => {
     // default error object: passed in err obj will overwrite default property values
       const defaultErr = {
         log: 'Express error handler caught unknown middleware error',
-        status: 400,
+        status: 500,
         message: { err: 'An error occurred' },
       };
     

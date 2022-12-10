@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import History from './History'
 import FormCard from './FormCard'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import css from '../style.css';
 
 function Form(props) {
+
+    const navigate = useNavigate();
 
     const { timerOn, timer, showTimer, startTimer, endTimer, resetTimer, toggle, darkModeOn, toggleDarkMode } = props;
 
@@ -195,9 +197,8 @@ function Form(props) {
             )
         });
         setTimer1(old => 0);
-
+        navigate('./')
         console.log('workout saved');
-        location.reload();
     };
 
 
@@ -206,13 +207,15 @@ function Form(props) {
 <>
     
     <div className={darkModeOn ? 'body2' : 'body'} >
-        <div className="links">
-        <button id={darkModeOn ? 'toggler1' : 'toggler2'} onClick={toggleDarkMode} >{darkModeOn ? 'Light Mode' : 'Dark Mode'} </button>
-        <div className="sublinks-box">
-          <Link to="/about"><button className={darkModeOn ? "sub-links" : "sub-links2"}>About</button></Link>
-          <Link to="/history"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Workout History</button></Link>
-        </div>
-    </div>  
+        {/* <div className="links"> */}
+        {/* <button id={darkModeOn ? 'toggler1' : 'toggler2'} onClick={toggleDarkMode} >Log-in</button> */}
+        {/* <button id={darkModeOn ? 'toggler1' : 'toggler2'} onClick={toggleDarkMode} >{darkModeOn ? 'Light Mode' : 'Dark Mode'} </button> */}
+        {/* <div className="sublinks-box"> */}
+          {/* <Link to="/about"><button className={darkModeOn ? "sub-links" : "sub-links2"}>About</button></Link> */}
+          
+          {/* <Link to="/history"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Workout History</button></Link> */}
+        {/* </div> */}
+        {/* </div>   */}
 
     <div className="header-style">
         <div id={darkModeOn ? "logo" : "logo2"}>Swole</div>

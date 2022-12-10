@@ -1,48 +1,26 @@
 * {
     font-family: 'Karla', sans-serif;
-    color: floralwhite;
+    color: white;
 }
 
 .body {
     /* background: linear-gradient(grey, black); */
-    /* background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%); */
     background-color:floralwhite;
     color: white;
-    border-radius: 5px;
     margin: none;
-      /* height: 100vh;
-    width: 100%; */
-    /* display: flex; */
+
 }
 
 .body2 {
     background: rgb(35, 35, 35);
-    border-radius: 5px;
     margin: none;
-    /* height: 100vh;
-    width: 100%; */
 }
-
-/* #history-box{
-    font-size: 48px;
-    text-shadow: 2px 2px 5px black; 
-    color:rgb(83, 83, 100);
-    /* font-family: 'Shadows Into Light', cursive; */
-    /* font-family: 'Ubuntu', sans-serif;
-}
-#history-box2{
-    font-size: 48px;
-    text-shadow: 2px 2px 5px black; 
-    color:rgb(116, 153, 190);
-    /* font-family: 'Shadows Into Light', cursive; */
-    /* font-family: 'Ubuntu', sans-serif;
-}  */
 
 .button-style {
-    font-size: 12px;
-    height: 35px;
-    width: 75px;
-    border-radius: 5px;
+    font-size: 16px;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: green;
     color: white;
@@ -54,7 +32,7 @@
     font-size: 12px;
     height: 35px;
     width: 75px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: blue;
     color: white;
@@ -96,12 +74,15 @@
 
 #clock{
     font-size: 24px;
+    font-weight: 600;
     color:rgb(116, 153, 190);
+    padding-top: 15px;
 }
 #clock2{
     font-size: 24px;
     font-weight: 600;
     color:black;
+    padding-top: 15px;
 }
 
 #end-button {
@@ -223,6 +204,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap:wrap;
+    padding-bottom: 1500px;
 }
 .history-card{
     font-size: 14px;
@@ -242,31 +224,27 @@
     padding: 15px;
 }
 .history-card > textarea{
-    width: 150px;
-    height: 25px;
+    width: 250px;
+    height: 50px;
     text-align: center;
     border-radius: 5px;
     color: black;
     margin-bottom: 10px;
-    width: 250px;
-    height: 25px;
 }
 .history-card2 > textarea{
-    width: 150px;
-    height: 25px;
+    width: 250px;
+    height: 50px;
     text-align: center;
     border-radius: 5px;
     background: rgb(35, 35, 35);
     color: floralwhite;
     margin-bottom: 10px;
-    width: 250px;
-    height: 25px;
 }
 .history-card2{
-    font-size: 12px;
+    font-size: 14px;
     background-color:rgb(83, 83, 100);
     color: white;
-    max-height: 500px;
+    max-height: 700px;
     max-width: 500px;
     min-width: 500px;
     border-radius: 10px;
@@ -321,6 +299,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: none;
 }
 .login > input{
     width: 200px;
@@ -355,6 +334,7 @@
     border: 1px solid black;
     background-color:rgb(83, 83, 100);
     color: white;
+    margin-top: -900px;
 }
 
 .login > input{
@@ -378,9 +358,10 @@
     border: 1px solid black;
     background-color:rgb(116, 153, 190);
     color: white;
+    margin-top: -900px;
 }
 #login-button {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color:rgb(116, 153, 190);
     color: white;
     cursor: pointer;
@@ -403,7 +384,7 @@
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 #login-button2 {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(83, 83, 100);
     color: floralwhite;
     cursor: pointer;
@@ -428,44 +409,52 @@
     text-shadow: 2px 2px 5px black; 
     color:rgb(83, 83, 100);
     /* font-family: 'Shadows Into Light', cursive; */
-    font-family: 'Ubuntu', sans-serif;
-    padding-bottom: 100px;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Fredoka One';
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-align:center;
 }
 #logo2{
     font-size: 69px;
-    text-shadow: 2px 2px 5px black; 
+    text-shadow: 1px 2px 2px black; 
     color:rgb(116, 153, 190);
     /* font-family: 'Shadows Into Light', cursive; */
-    font-family: 'Ubuntu', sans-serif;
-    padding-bottom: 100px;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Fredoka One';
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-align:center;
 }
 
 #navbar {
     background-color:floralwhite;
     color: white;
-    border-radius: 5px;
+
     margin: none;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 25px;
     gap: 25px;
+    padding-bottom: 100px;
 }
 #navbar2 {
     background: rgb(35, 35, 35);
-    border-radius: 5px;
+ 
     margin: none;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 25px;
     gap: 25px;
+    padding-bottom: 100px;
 }
 
 .sublinks-box {
     width: 250px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 .sub-links {
@@ -478,7 +467,7 @@
 }
 
 .sub-links{
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(83, 83, 100);
     color: floralwhite;
     cursor: pointer;
@@ -496,7 +485,7 @@
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 .sub-links2 {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(116, 153, 190);
     color: floralwhite;
     cursor: pointer;
@@ -519,11 +508,7 @@
     align-items: center;
     gap: 10px;
 }
-#summary-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .summary-card{
     font-size: 14px;
     max-height: 500Px;
@@ -570,14 +555,23 @@
 }
 #summary-header{
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 15px
+}
+#temp-box{
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 
 #timer{
     display: flex;
 }
 #toggler1 {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(83, 83, 100);
     color: floralwhite;
     cursor: pointer;
@@ -595,7 +589,7 @@
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 #toggler2 {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(116, 153, 190);
     color: floralwhite;
     cursor: pointer;

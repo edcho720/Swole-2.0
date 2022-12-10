@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
+import { Route, Routes, Link, useNavigate } from 'react-router-dom'
 import Workouts from './Workouts'
 import Form from './Form'
 import Login from './Login'
@@ -42,18 +42,25 @@ function App() {
     setTimerOn(false)
     setTimer(old => null); 
   }
+  const navigate = useNavigate()
+
+  function goToMain() {
+    navigate('./main')
+  }
 
   // '/api/workouts' //
 
   return (
               <>
                 <nav id={darkModeOn ? 'navbar2' : 'navbar'}>
-                    <Link to="/about"><button className={darkModeOn ? "sub-links" : "sub-links2"}>About</button></Link>
+
+                    {/* <Link to="/about"><button className={darkModeOn ? "sub-links" : "sub-links2"}>About</button></Link> */}
+                    <button id={darkModeOn ? 'toggler1' : 'toggler2'} onClick={toggleDarkMode} >{darkModeOn ? 'Light Mode' : 'Dark Mode'} </button>
                     <Link to="/main"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Main</button></Link>
                     <Link to="/history"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Workout History</button></Link>
-                    <Link to="/"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Log-in</button></Link>
+                    {/* <Link to="/"><button className={darkModeOn ? "sub-links" : "sub-links2"}>Log-in</button></Link> */}
                 </nav>
-                <Login darkModeOn={darkModeOn}/>
+                {/* <Login darkModeOn={darkModeOn}/>
                 <Form 
                     timer={timer}
                     showTimer={showTimer} 
@@ -64,10 +71,11 @@ function App() {
                     timerOn={timerOn}
                     toggleDarkMode={toggleDarkMode} 
                     darkModeOn={darkModeOn}/>
-                <Workouts darkModeOn={darkModeOn}/>
+                <Workouts darkModeOn={darkModeOn}/> */}
 
-              {/* <Routes>
-                    <Route path='/' element={<Login darkModeOn={darkModeOn}/>} /> 
+              <Routes>
+                    {/* <Route path='/' element={<Login darkModeOn={darkModeOn}/>} /> */}
+                    <Route path='/' element={<Login darkModeOn={darkModeOn} onClick={goToMain}/>} /> 
                     <Route path='/about' element={About} />
                     <Route element={Error} />
                     <Route path='/history' element={<Workouts darkModeOn={darkModeOn}/>} />
@@ -81,7 +89,7 @@ function App() {
                     timerOn={timerOn}
                     toggleDarkMode={toggleDarkMode} 
                     darkModeOn={darkModeOn}/>} />
-              </Routes> */}
+              </Routes>
               </>
     )
   };

@@ -7,6 +7,13 @@ function Workouts(props) {
   const [fetchedWos, setFetchedWos] = useState([])
   const [ isFetching , setIsFetching ] = useState(true);
 
+  const [ loop, setLoop ] = useState(true);
+
+  setTimeout(() => {
+    console.log(loop)
+    setLoop(old => !old)
+  }, 2000);
+
   let allWorkouts;
 
   useEffect(() => {
@@ -19,6 +26,16 @@ function Workouts(props) {
         .then(data => {
           setFetchedWos(old => [...data] )
             setIsFetching(false);
+
+
+          // let allWorkouts = [];
+          // for(let i = fetchedWos.length - 1; i >= 0; i--) {
+          //   allWorkouts.push(fetchedWos[i])
+          // }
+
+
+
+
             allWorkouts = fetchedWos.map( wo => {
               return (
                 <WorkoutCard 
@@ -33,9 +50,10 @@ function Workouts(props) {
         .catch(err => {
           console.log('GET req error on LOAD Error:', err)
         })
-    }, []); // runs only on first render, don't include it and it will run on every render
+    }, [fetchedWos] ); // runs only on first render, don't include it and it will run on every render
+    // you could try using the length property of the state data as what you put into the dependancy array
 
-    const fetchedData = fetchedWos;
+    const fetchedData = fetchedWos.reverse();
     const dataWo = fetchedData.map( (wo, i) => {
       return (
         <WorkoutCard 

@@ -30,6 +30,14 @@ his advise: get sleep lol, debugging is def a skill, read your console carefully
 mongo will see that and just delete it from the query obj so it will default to a search for everything or an { }, so have to be precise
 about the property names you use to make queries (be exact), like for _id, make sure you call it _id: req.params.id
 
+
+
+react router issues with routing. used useNaviagte hook to re-route
+still can't use browser url to navigate pro because of no server side rendering??
+
+
+
+
 ok ya'll this is for all of yous Gym Bros, Meat heads and Fitness Enthusiasts but especially for anyone who's
 looking to really make the most of your time working out. Workout Logger will help you to keep track of your
 progress in the gym by keeping a record of your workouts. Its well-known that doing so 

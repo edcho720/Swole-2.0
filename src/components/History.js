@@ -66,7 +66,7 @@ function History(props) {
   
 
   return ( // bugs -> comments bleed out of div on the right side, made it scroll horizontally for now.
-    <div className={darkModeOn ? 'body2' : 'body'} id="summary-box">
+    <div id="temp-box" className={darkModeOn ? 'body2' : 'body'} >
 
       {startDate && <><div className={darkModeOn ? "summary-card2" : "summary-card"}>
         <p id="summary-header"><b>Workout Summary</b></p>
