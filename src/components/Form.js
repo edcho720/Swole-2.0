@@ -4,8 +4,6 @@ import FormCard from './FormCard'
 import { Link, useNavigate } from 'react-router-dom'
 import css from '../style.css';
 
-import { Grid, Card } from '@mui/material';
-
 function Form(props) {
 
     const navigate = useNavigate();
@@ -13,6 +11,7 @@ function Form(props) {
     const { timerOn, timer, showTimer, startTimer, endTimer, resetTimer, toggle, darkModeOn, toggleDarkMode } = props;
 
     const [formData, setFormData] = useState(
+
         {
             exercise0: "",
             muscleGroup0: "",
@@ -206,75 +205,71 @@ function Form(props) {
 
   return (
 
-<div className={darkModeOn ? 'main' : 'main2'}>
-    
-    <div className={darkModeOn ? 'timer2' : 'timer'} >
-
-        <div className="header-style">
-
-
-                <div id="timer">
-
-                    <button className="button-style" onClick={showTimer}>{!toggle ? 'Show Timer' : 'Start Timer'}</button><br />
-                    {!toggle && timer === 0 && <button className="button-style" onClick={startTimer}>Start Timer</button>}<br />
-                    <button className="button-style" onClick={resetTimer}>Reset Timer</button><br />
-                    <button className="button-style" id="end-button" onClick={endTimer}>End Timer</button><br /><br />
-                    
-                </div>
-
-                <div id={darkModeOn ? "clock" : "clock2"}>
-                    {timerOn && `Seconds elapsed: ${timer}`}
-                </div>
+            <div className={darkModeOn ? 'main' : 'main2'}>
                 
-        </div>
+                <div className={darkModeOn ? 'timer2' : 'timer'} >
 
-    </div>
+                    <div className="timer-buttons">
 
-    <div className={darkModeOn ? 'form2' : 'form'}>
+                        <button className="button-style" onClick={showTimer}>{!toggle ? 'Show Timer' : 'Start Timer'}</button><br />
+                        {!toggle && timer === 0 && <button className="button-style" onClick={startTimer}>Start Timer</button>}<br />
+                        <button className="button-style" onClick={resetTimer}>Reset Timer</button><br />
+                        <button className="button-style" id="end-button" onClick={endTimer}>End Timer</button><br /><br />
+                                    
+                    </div>
 
-        <form className="form-display" onSubmit={endWorkout}>
+                    <div id={darkModeOn ? "clock" : "clock2"}>
 
-            <button 
-                className="button-style" 
-                id="jump-button" 
-                onClick={startWorkout}
-            >Start Workout
-            </button>
+                        {timerOn && `Seconds elapsed: ${timer}`}
 
-            <div>
-            <FormCard 
-                formData={formData} 
-                handleChange={handleChange} 
-                darkModeOn={darkModeOn} 
-            />
+                    </div>
+
+                </div>
+
+                <div className={darkModeOn ? 'form2' : 'form'}>
+
+                    <form className="form-display" onSubmit={endWorkout}>
+
+                        <button 
+                            className="button-style" 
+                            onClick={startWorkout}
+                        >Start Workout
+                        </button>
+
+                        <div>
+                        <FormCard 
+                            formData={formData} 
+                            handleChange={handleChange} 
+                            darkModeOn={darkModeOn} 
+                        />
+                        </div>
+
+                        <button 
+                            className="button-style" 
+                            id="end-button" 
+                            onClick={endWorkout}>
+                            End Workout
+                        </button>
+
+                    </form>    
+
+                    <hr></hr>
+
+                    <div id="summary-box">
+
+                    <Summary 
+                        className="history-card" 
+                        formData={formData} 
+                        time={time} 
+                        saveWorkout={handleSave} 
+                        darkModeOn={darkModeOn}
+                    />
+
+                    </div>
+
+                </div>
             </div>
-
-            <button 
-                className="button-style" 
-                id="end-button" 
-                onClick={endWorkout}>
-                End Workout
-            </button>
-
-        </form>    
-
-        <hr></hr>
-
-        <div id="history-box">
-
-        <Summary 
-            className="history-card" 
-            formData={formData} 
-            time={time} 
-            saveWorkout={handleSave} 
-            darkModeOn={darkModeOn}
-        />
-
-        </div>
-
-    </div>
-    </div>
   )
-}
+};
 
 export default Form;

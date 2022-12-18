@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import WorkoutCard from './WorkoutCard'
+import React, { useState, useEffect } from 'react';
+import WorkoutCard from './WorkoutCard';
 
 function Workouts(props) {
+
   const { darkModeOn } = props;
 
   const [fetchedWos, setFetchedWos] = useState([])
@@ -53,7 +54,7 @@ function Workouts(props) {
 
         // setTimeout( ()=> location.reload(), 5000); /* will this work? */
 
-    }, [fetchedWos] ); // runs only on first render, don't include it and it will run on every render
+    }, [/* fetchedWos */] ); // runs only on first render, don't include it and it will run on every render
     // you could try using the length property of the state data as what you put into the dependancy array
 
     const fetchedData = fetchedWos.reverse();
@@ -92,9 +93,9 @@ for(let i = 0; i < dataWo.length; i++) {
   // console.log('right before the render', dataWo)
     if(!isFetching) {
       return (
-        <div className={darkModeOn ? 'body2' : 'body'}>
-          <div className="history-logo" id={darkModeOn ? "logo" : "logo2"}>Workout History</div>
-          <div id="history-box">{dataWo}</div>
+        <div className={darkModeOn ? 'history2-box' : 'history-box'}>
+          <div id={darkModeOn ? "logo" : "logo2"}>Workout History</div>
+          <div className='historycards-box'>{dataWo}</div>
         </div>
       )
     };

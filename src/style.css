@@ -1,14 +1,12 @@
-html, body {
+
+* {
     font-family: 'Karla', sans-serif;
     color: white;
-    margin: 0;
-    padding: 0;
 }
 
-#app-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 .body {
@@ -20,6 +18,7 @@ html, body {
     background: hsl(323 21% 16%);
     padding-top: 300px;
 }
+
 .button-style {
     font-size: 16px;
     height: 50px;
@@ -62,13 +61,19 @@ html, body {
     font-weight: 600;
     color:rgb(116, 153, 190);
     padding-top: 15px;
+    display: flex;
+    justify-content: center;
+
 }
 #clock2{
     font-size: 24px;
     font-weight: 600;
     color:black;
     padding-top: 15px;
+    display: flex;
+    justify-content: center;
 }
+
 #end-button {
     background-color: darkred;
 }
@@ -84,7 +89,6 @@ html, body {
     justify-content: center;
     align-items: center;
     width:100%;
-    gap:25px;
     margin-bottom: 50px;
 }
 
@@ -92,11 +96,18 @@ html, body {
     background-color:floralwhite;
     color: white;
     padding-top: 50px;
+    width:100%;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 .form2 {
     background: hsl(323 21% 16%);
     padding-top: 50px;
+    width:100%;
+    margin-right: 0px;
+    margin-left: 0px;
 }
+
 .form-card{
     height: 250px;
     width:200px;
@@ -147,6 +158,11 @@ html, body {
     text-align: center;
     color: black;
 }
+.form-card > label {
+    text-align: center;
+    color: black;
+}
+
 .form-card2 > input {
     width: 100px;
     border-radius: 5px;
@@ -169,35 +185,46 @@ html, body {
     background: rgb(35, 35, 35);
     color: floralwhite;
 }
-.header-style {
-    background-color: none;
+.form-card2 > label {
+    text-align: center;
     color: white;
-    height:15vh;
-    width: 100%;
+}
+
+.history-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding-bottom:50px;
+    background-color:floralwhite;
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 1000px;
+    width: 100%;
 }
-.history-logo{
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    
-}
-#history-box{
+.history2-box {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap:wrap;
-    padding-bottom: 1500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: hsl(323 21% 16%);
+    padding-top: 25px;
+    padding-bottom: 1000px;
+    width: 100%;
 }
+
+.historycards-box{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .history-card{
     font-size: 14px;
     background-color: rgb(116, 153, 190);
     color: white;
-    max-height: 700px;
+    max-height: 1000px;
     max-width: 500px;
     min-width: 250px;
     border-radius: 10px;
@@ -206,7 +233,6 @@ html, body {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    margin: 25px;
     border: 1px solid black;
     padding: 15px;
 }
@@ -238,16 +264,15 @@ html, body {
     font-size: 14px;
     background-color:rgb(83, 83, 100);
     color: white;
-    max-height: 700px;
+    max-height: 1000px;
     max-width: 500px;
-    min-width: 500px;
+    min-width: 250px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
-    margin: 25px;
     border: 1px solid black;
     padding: 15px;
 }
@@ -258,14 +283,11 @@ html, body {
     width: 50px;
     font-size: 10px;
 }
+
 #historyCard-header{
     font-size: 16px;
 }
-#history-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .links{
     display: flex;
     justify-content: space-between;
@@ -283,70 +305,77 @@ html, body {
 }
 
 /* form validation styling */
+
 .error {
-	color: black;
-}
-input.input-error,
-select.input-error {
-	border-color: black;
+	color: rgb(224, 18, 114);
+    /* font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bold; */
 }
 
-
-.login-buttons{
-    display: flex;
-    margin-top: 25px;
+input.input-error, select.input-error {
+	border-color:  rgb(224, 18, 114);
 }
+
 .login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
-    width: 500px;
+    max-height: 1000px;
+    max-width: 600px;
+    min-width: 300px;
+    width: 30%;
     padding: 10px;
     border-radius: 5px;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
     border: 1px solid black;
     background-color:#161414;
     color: white;
     margin-bottom: 150px;
+    margin-top: -300px;
 }
 .login2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
-    width: 500px;
+    max-height: 1000px;
+    max-width: 600px;
+    min-width: 300px;
+    width: 30%;
     padding: 10px;
     border-radius: 5px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
     border: 1px solid black;
     background-color:rgb(116, 153, 190);
     color: white;
     margin-bottom: 150px;
+    margin-top: -300px;
 }
 .login > label{
     width: 60%;
 	text-align: center;
 	margin-top: 20px;
-    
+    font-size: 20px;
+    color: floralwhite;
 }
 .login2 > label{
     width: 60%;
 	text-align: center;
 	margin-top: 20px;
-
+    font-size: 20px;
+    color: black;
 }
 .login > input{
     background: rgb(35, 35, 35);
     color: floralwhite;
-    font-size: 20px;
-    width: 300px;
+    font-size: 16px;
+    width: 90%;
     height: 50px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -357,8 +386,8 @@ select.input-error {
 .login2 > input{
 
     color: black;
-    font-size: 24px;
-    width: 300px;
+    font-size: 16px;
+    width: 90%;
     height: 50px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -422,46 +451,41 @@ select.input-error {
     color:rgb(83, 83, 100);
     font-family: 'Fredoka One';
 }
-#logo-nav{
-    font-size: 69px;
+
+.logo-nav{
+    font-size: 50px;
     text-shadow: 2px 2px 5px black; 
-    color:rgb(83, 83, 100);
     font-family: 'Fredoka One';
     text-align: left;
+    color: rgb(83, 83, 100);
 }
+.logo-nav2{
+    font-size: 50px;
+    text-shadow: 2px 2px 5px black; 
+    font-family: 'Fredoka One';
+    text-align: left;
+    color: floralwhite;
+}
+
 #logo{
-    font-size: 69px;
+    font-size: 55px;
     text-shadow: 2px 2px 5px black; 
     color:rgb(83, 83, 100);
     font-family: 'Fredoka One';
-    padding-bottom: 25px;
+    padding-bottom: 50px;
     padding-top: 25px;
     text-align:center;
 }
 #logo2{
-    font-size: 69px;
+    font-size: 55px;
     text-shadow: 1px 2px 2px black; 
     color:rgb(116, 153, 190);
     font-family: 'Fredoka One';
-    padding-bottom: 25px;
+    padding-bottom: 50px;
     padding-top: 25px;
     text-align:center;
 }
-.main{
-    background-color: hsl(323 21% 16%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.main2{
-    background-color: floralwhite;;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 #navbar {
     background-color:floralwhite;
     color: white;
@@ -475,7 +499,6 @@ select.input-error {
 }
 #navbar2 {
     background: rgb(35, 35, 35);
-
     margin: none;
     display: flex;
     justify-content: center;
@@ -526,6 +549,13 @@ select.input-error {
 .sub-links2:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
+#summary-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .summmary-container{
     display: flex;
     justify-content: center;
@@ -543,7 +573,7 @@ select.input-error {
 }
 .summary-card{
     font-size: 14px;
-    max-height: 00Px;
+    max-height: 600Px;
     max-width: 500px;
     min-width: 250px;
     background-color: rgb(116, 153, 190);
@@ -551,7 +581,7 @@ select.input-error {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: nowrap;
     padding: 15px;
@@ -573,7 +603,7 @@ select.input-error {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: nowrap;
     padding: 15px;
@@ -600,19 +630,27 @@ select.input-error {
 
 /* TIMER container */
 
-#timer{
+.timer-buttons {
+    background-color: none;
+    color: white;
+    width: 100%;
     display: flex;
-    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom:50px;
 }
+
 .timer {
     background-color:floralwhite;
     color: white;
     padding-top: 200px;
 }
 .timer2 {
-    background: /* rgb(35, 35, 35) */ hsl(323 21% 16%);
+    background: hsl(323 21% 16%);
     padding-top: 200px;
 }
+
 #toggler1 {
     border-radius: 10px;
     background-color: rgb(83, 83, 100);
@@ -649,118 +687,130 @@ select.input-error {
 }
 
 
+.main{
+    background-color: hsl(323 21% 16%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.main2{
+    background-color: floralwhite;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
 /* Mobile Settings */
 
 
-@media screen and (max-width: 400px) {
+@media all and (max-width: 1500px) {
 
-    .summary-card{
-        font-size: 14px !important;
-        height: 600Px !important;
-        width: 250px !important;
-    }
-    .summary-card2{
-        font-size: 14px !important;
-        height: 600Px !important;
-        width: 250px !important;
-    }
-    #logo{
-        font-size: 50px !important;
-    }
-    #logo2{
-        font-size: 50px !important;
-    }
-
-};
-
-@media screen and (max-width: 750px) {
-
-    .header-style {
-        height:100% !important;
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-around !important;
-        align-items: center !important;
-        padding-bottom:0px !important;
-    };
     .button-style {
-        margin-top: 2px !important;
-        margin-bottom: 2px !important;
-    };
-    #timer{
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        margin-top: 50px !important;
-    };
-    .timer {
-        background-color:floralwhite !important;
-        color: white !important;
-        padding-top: 100px !important;
-    };
-    .timer2 {
-        background: hsl(323 21% 16%) !important;
-        padding-top: 100px !important;
-    };
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
 
-    #app-bar{
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    };
-    .navbar-logo{
-        display: none !important;
-    };
+    .form-display {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    .login{
-        width: 300px !important;
-    }
-    .login2{
-        width: 300px !important;
-    }
-    .login > input{
-        width: 250px !important;
-        font-size: 16px !important;
-    }
-    .login2 > input{
-        width: 250px !important;
-        font-size: 16px !important;
-    }
-    #login-button{
-        width: 100px !important;
-    }
-    #login-button2{
-        width: 100px !important;
     }
 
 };
 
-@media screen and (max-width: 1500px) {
+@media screen and (min-width: 750px) {
+    .login {
+        width: 500px;
+    }
 
-.button-style {
-    margin-top: 50px !important;
-     margin-bottom: 10px !important;
- }
-
-.form-display{
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width:100% !important;
-    margin-bottom: 50px !important;
+    .login2 {
+        width: 500px;
+    }
 }
 
-.form-card{
-    height: 250px !important;
-    width:200px !important;
+@media screen and (max-width: 505px) {
+    .logo-nav2{
+        font-size: 32px !important;
+        margin-right: auto;
+    };
+
+    .timer2 {
+        background: hsl(323 21% 16%);
+        padding-top: 100px;
+    };
+
+    .login2 > input{
+        font-size: 16px;
     }
-.form-card2{
-    height: 250px !important;
-    width:200px !important;
+
+}
+
+@media screen and (max-width: 500px) {
+    .logo-nav{
+        font-size: 32px;
+        margin-right: auto;
+    };
+
+    .timer {
+        background-color:floralwhite;
+        color: white;
+        padding-top: 100px;
+    };
+
+    .login > input {
+        font-size: 16px;
     }
 
 };
+
+
+@media all and (max-width: 650px) {
+
+    .header-style {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom:50px;
+    };
+
+}
+
+@media all and (max-width: 405px) {
+    .summary-card {
+        font-size: 14px;
+        height: 600Px;
+        width: 250px;
+    }
+    #logo {
+        font-size: 50px;
+    }
+}
+
+@media all and (max-width: 400px) {
+
+    .summary-card2 {
+        font-size: 14px;
+        height: 600Px;
+        width: 250px;
+    }
+
+    #logo2 {
+        font-size: 50px;
+    }
+
+    /* #icon-div{
+
+    } */
+
+};
+
+

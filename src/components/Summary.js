@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Card from './Card'
 import css from '../style.css';
 
 function Summary(props) {
@@ -96,9 +95,10 @@ function Summary(props) {
       </div>
 
       </>}
+
     </div>
 
   )
-}
+};
 
 export default Summary;

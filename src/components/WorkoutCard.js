@@ -119,16 +119,16 @@ function handleUpdate(id) {
   setEditInfo({comments4: ""})
   setEditOn(false);
   
-  setTimeout(() => {
-    navigate('./')
-  }, 5000)
+  // setTimeout(() => {
+  //   navigate('./')
+  // }, 5000)
 }
 
 
   return (
 
+    <div >
 
-    <div className={darkModeOn ? 'body2' : 'body'}>
         <div className={darkModeOn ? "history-card2" : "history-card"}>
 
             <div id="historyCard-header"><b></b><h2>{startDate}</h2></div>
@@ -160,8 +160,10 @@ function handleUpdate(id) {
             />}
 
         </div>
+
     </div>
   )
-}
 
-export default WorkoutCard
+};
+
+export default WorkoutCard;

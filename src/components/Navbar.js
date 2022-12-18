@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, Tooltip, Typography, button, IconButton } from '@mui/material';
+import { Box, AppBar, Toolbar, Tooltip, IconButton } from '@mui/material';
 // import { useTheme } from '@mui/styles';
 import { Link, useNavigate } from 'react-router-dom'
-
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import FitnessCenterTwoToneIcon from '@mui/icons-material/FitnessCenterTwoTone';
@@ -17,87 +16,69 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
 
     return (
 
-     
-            <Box sx={{ flexGrow: 1}}>
-            <AppBar position ='fixed' sx={{ height: 150, backgroundColor: bgColors }}>
+        <Box sx={{ flexGrow: 1 }}>
 
-                <Toolbar id='app-bar' sx={{ height: 150 }}>
+            <AppBar position ='static' sx={{ height: 150, backgroundColor: bgColors }}>
 
-               
-                
+                <Toolbar sx={{ height: 150, display: 'flex', justifyContent: 'space-between' }}>
 
-                    <div className='navbar-logo'>
-                        <Typography 
-                            id='logo-nav' 
-                            component='div' 
-                            sx={{ flexGrow: 1, marginLeft: 3 }}
-                            color={darkModeOn ? 'rgb(83, 83, 100) !important' : 'floralwhite !important'}
-                        >
-                        Swole
-                        </Typography>
+                    <div className={darkModeOn ? 'logo-nav' : 'logo-nav2'} >
+                    Swole
                     </div>
 
-
-                    <div className='icons-div'>
-                            <Tooltip title={darkModeOn ? 'Light Mode' : 'Dark Mode'} arrow placement='bottom'>
-                                <IconButton 
-                                    onClick={toggleDarkMode}
-                                    color={darkModeOn ? 'inherit' :''} 
-                                    size='large' sx={{ '&:hover': { backgroundColor: hoverColors } }}
-                                
-                                >
-                                    {darkModeOn ? <LightModeIcon></LightModeIcon> : <ModeNightIcon></ModeNightIcon>}
-                                </IconButton>
-                            </Tooltip>
-                        
-                        
-
+                    <div id='icon-div'>
+                        <Tooltip title={darkModeOn ? 'Light Mode' : 'Dark Mode'} arrow placement='bottom'>
+                            <IconButton 
+                                onClick={toggleDarkMode}
+                                color={darkModeOn ? 'inherit' :''} 
+                                size='large' sx={{ '&:hover': { backgroundColor: hoverColors } }}
+                            >
+                                {darkModeOn ? <LightModeIcon></LightModeIcon> : <ModeNightIcon></ModeNightIcon>}
+                            </IconButton>
+                        </Tooltip>
+                         
                         <Link to="/main">
-                            <Tooltip title={darkModeOn ? 'Light Mode' : 'Dark Mode'} arrow placement='bottom'>
-                                <IconButton 
-                                    color={darkModeOn ? 'inherit' :'white !important'} 
-                                    size='large' 
-                                    sx={{ '&:hover': { backgroundColor: hoverColors } }}>
-                                    <FitnessCenterTwoToneIcon></FitnessCenterTwoToneIcon>
-                                </IconButton>
-                            </Tooltip>
+                        <Tooltip title='Main' arrow placement='bottom'>
+                            <IconButton 
+                                color={darkModeOn ? 'inherit' :'white !important'} 
+                                size='large' 
+                                sx={{ '&:hover': { backgroundColor: hoverColors } }}>
+                                <FitnessCenterTwoToneIcon></FitnessCenterTwoToneIcon>
+                            </IconButton>
+                        </Tooltip>
                         </Link>
-
+                     
                         <Link to="/history">
-                            <Tooltip title={darkModeOn ? 'Light Mode' : 'Dark Mode'} arrow placement='bottom'>
-                                <IconButton 
-                                    color={darkModeOn ? 'inherit' :'white !important'} 
-                                    size='large' 
-                                    sx={{ '&:hover': { backgroundColor: hoverColors } }}>
-                                    <DatasetTwoToneIcon></DatasetTwoToneIcon>
-                                </IconButton>
-                            </Tooltip>
+                        <Tooltip title='Workout History' arrow placement='bottom'>
+                            <IconButton 
+                                color={darkModeOn ? 'inherit' :'white !important'} 
+                                size='large' 
+                                sx={{ '&:hover': { backgroundColor: hoverColors } }}>
+                                <DatasetTwoToneIcon></DatasetTwoToneIcon>
+                            </IconButton>
+                        </Tooltip>
                         </Link>
-
+                      
                         <Link to={`${user ? '/' : ''}`}>
-						{/* may remove path later if ok */}
-                            <Tooltip title='Logout' arrow placement='bottom'>
-                                <IconButton
-                                    onClick={() => setUser(null)}
-                                    color={darkModeOn ? 'inherit' :'white !important'} 
-                                    size='large' 
-                                    sx={{ '&:hover': { backgroundColor: hoverColors } }}
-                                >
-                                    <LogoutTwoToneIcon></LogoutTwoToneIcon>
-                                </IconButton>
-                            </Tooltip>
-					    </Link>
-
+                        <Tooltip title='Logout' arrow placement='bottom'>
+                            <IconButton
+                                onClick={() => setUser(null)}
+                                color={darkModeOn ? 'inherit' :'white !important'} 
+                                size='large' 
+                                sx={{ '&:hover': { backgroundColor: hoverColors } }}
+                            >
+                                <LogoutTwoToneIcon></LogoutTwoToneIcon>
+                            </IconButton>
+                        </Tooltip>
+                        </Link>
                     </div>
-
-         
 
                 </Toolbar>
+
             </AppBar>
-            </Box>
 
+        </Box>
 
-    
     )
 };
 

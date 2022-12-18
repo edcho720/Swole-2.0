@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik'; // need formik to use yup for form validation
 import { loginSchema } from '../schemas'; // import validation schema
 
@@ -113,7 +113,7 @@ function Login(props) {
                         id='logo-login' 
                         // component='div' 
                         
-                        sx={{ flexGrow: 1, marginTop: 5 }}
+                        sx={{ flexGrow: 1/* , marginTop: 5 */ }}
                         color={darkModeOn ? 'rgb(83, 83, 100) !important' : 'white !important'}
                     >
                     Swole
