@@ -49,7 +49,10 @@ function Workouts(props) {
         })// data is supposed to be an array, but ret undefined
         .catch(err => {
           console.log('GET req error on LOAD Error:', err)
-        })
+        });
+
+        // setTimeout( ()=> location.reload(), 5000); /* will this work? */
+
     }, [fetchedWos] ); // runs only on first render, don't include it and it will run on every render
     // you could try using the length property of the state data as what you put into the dependancy array
 

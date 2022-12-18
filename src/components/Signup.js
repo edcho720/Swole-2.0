@@ -5,18 +5,17 @@ import { loginSchema } from '../schemas'; // import validation schema
 
 import { Typography } from '@mui/material'; 
 
-
-function Login(props) {
+function Signup(props) {
 
     // const [ loginForm, setLoginForm ] = useState({ user: "", pass: ""});
 
     const { darkModeOn, toggleDarkMode } = props;
 
-    const navigate = useNavigate();
-    /* routes user to signup page */
-    function goToSignup() {
-        navigate('/signup')
-      }
+    // const navigate = useNavigate();
+    // /* routes user to signup page */
+    // function goToSignup() {
+    //     navigate('/signup')
+    //   }
 
     // onSubmit or Login handler function -> add Authentication logic here
     const onSubmit = async (values, actions) => {
@@ -102,24 +101,23 @@ function Login(props) {
 
     
         {/* <div className={darkModeOn ? 'login' : 'login2'}> */}
-                    
+
 
 				<form
 					autoComplete='off' // turns off auto-complete of inputs
 					className={darkModeOn ? 'login' : 'login2'}
 					onSubmit={handleSubmit} // formik method to handle submits of login form
 				>
+
                     <Typography 
                         id='logo-login' 
                         // component='div' 
                         
-                        sx={{ flexGrow: 1, marginTop: 5 }}
+                        sx={{ flexGrow: 1 }}
                         color={darkModeOn ? 'rgb(83, 83, 100) !important' : 'white !important'}
                     >
                     Swole
                     </Typography>
-
-
 
 					<label htmlFor='email'>Email</label>
 					<input
@@ -169,7 +167,7 @@ function Login(props) {
 						{/* Login button */}
 
                         <div className="login-buttons">
-                            
+{/*                             
                             <button 
                                 type='submit' 
                                 disabled={isSubmitting} 
@@ -177,10 +175,11 @@ function Login(props) {
                                 // onClick={}
                             >
                                 Login
-                            </button>
+                            </button> */}
 
                             <button 
-                                onClick={goToSignup} 
+                                type='submit'
+                                disabled={isSubmitting} 
                                 id={darkModeOn ? "login-button" : "login-button2"}
                             >
                                 Signup
@@ -200,4 +199,4 @@ function Login(props) {
   )
 }
 
-export default Login;
+export default Signup;

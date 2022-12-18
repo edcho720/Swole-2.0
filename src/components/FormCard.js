@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Grid, Card } from '@mui/material';
 
 function FormCard(props) {
 
@@ -6,8 +7,10 @@ function FormCard(props) {
 const { formData, handleChange, darkModeOn } = props
 
   return (
-    <>
-    <div className={darkModeOn ? "form-card2" : "form-card"}>
+    <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} spacing={{ xs: 2, md: 3}} columns={{ xs: 1, sm: 2, md: 5 }}>
+
+    <Grid item>
+        <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup0 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
             id="muscleGroup"
@@ -137,6 +140,9 @@ const { formData, handleChange, darkModeOn } = props
             name="comments0"
         />   
     </div>
+    </Grid>
+
+    <Grid item>
 
     <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup1 ? "Let's Get it!" : "Choose muscle group:"}</label>
@@ -268,7 +274,9 @@ const { formData, handleChange, darkModeOn } = props
             name="comments1"
         />   
     </div>
+    </Grid>
 
+    <Grid item >
     <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup2 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
@@ -399,7 +407,9 @@ const { formData, handleChange, darkModeOn } = props
             name="comments2"
         />   
     </div>
+    </Grid>
 
+        <Grid item>
     <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup3 ? "Let's Get it!" : "Choose muscle group:"}</label>
         <select
@@ -530,6 +540,9 @@ const { formData, handleChange, darkModeOn } = props
             name="comments3"
         />   
     </div>
+    </Grid>
+
+    <Grid item>
 
     <div className={darkModeOn ? "form-card2" : "form-card"}>
         <label htmlFor="muscleGroup">{formData.muscleGroup4 ? "Let's Get it!" : "Choose muscle group:"}</label>
@@ -661,7 +674,9 @@ const { formData, handleChange, darkModeOn } = props
             name="comments4"
         />   
     </div>
-    </>
+    </Grid>
+
+    </Grid>
   )
 }
 

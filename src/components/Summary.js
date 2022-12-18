@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Card from './Card'
 import css from '../style.css';
 
-function History(props) {
+function Summary(props) {
 
   const [ togg, setTogg ] = useState(true)
 
@@ -66,9 +66,14 @@ function History(props) {
   
 
   return ( // bugs -> comments bleed out of div on the right side, made it scroll horizontally for now.
-    <div id="temp-box" className={darkModeOn ? 'body2' : 'body'} >
+    <div id="temp-box" className={darkModeOn ? 'summary2' : 'summary'} >
 
-      {startDate && <><div className={darkModeOn ? "summary-card2" : "summary-card"}>
+      {startDate && 
+      
+      <>
+
+      <div className={darkModeOn ? "summary-card2" : "summary-card"}>
+
         <p id="summary-header"><b>Workout Summary</b></p>
         <div><b>{startDate}</b></div>
         <div><b>Workout Duration: </b>{woDuration && `${woDuration.toFixed(0)} minutes`}</div><br></br>
@@ -85,11 +90,15 @@ function History(props) {
         {comments3 &&  <div><b>Comments: </b>{comments3}</div>}<br></br>
         {muscleGroup4 && <div><b>5th Exercise: </b>{muscleGroup4} | {exercise4} | {weight4}lbs. | {sets4} sets | {reps4} reps | {rest4} sec | {rir4} RIR</div>}
         {comments4 && <div><b>Comments: </b>{comments4}</div>}<br></br>
+
         <button className="button-style" onClick={saveWorkout}>Save Workout</button>
-      </div></>}
+
+      </div>
+
+      </>}
     </div>
 
   )
 }
 
-export default History
+export default Summary;
