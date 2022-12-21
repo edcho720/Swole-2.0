@@ -6,6 +6,8 @@ const router = express.Router();
 // Authorization...
 const AuthController = require('../controllers/AuthController');
 const WorkoutController = require('../controllers/WorkoutController');
+const UserController = require('../controllers/UserController');
+
 
 router.get('/', WorkoutController.getAllWorkouts, (req, res) => {
     return res.status(200).json(res.locals.workouts);

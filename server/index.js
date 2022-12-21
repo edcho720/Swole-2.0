@@ -1,24 +1,48 @@
 const express = require('express');
 const app = express();
+
 // Import the mongoose module
 const mongoose = require('mongoose');
+
 // Authorization:
 const cookie = require('cookie-parser');
 const PORT = 1234;
+
 // connect to mongo via online Atlas
 const myURI = "mongodb+srv://eddieCho:NPkk5YuXPru85nTJ@workouts.cdqw2dy.mongodb.net/?retryWrites=true&w=majority";
+
 mongoose.connect(myURI, { useNewUrlParser: true, useUnifiedTopology: true }) // deleted DB option 'W'
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log(err));
 
 const workoutApi = require('./routes/workouts');
 
+const UserController = require('./controllers/UserController');
+
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 // For Cookies
 app.use(cookie());
 
+// User signup 
+app.post('/register', /* UserController.checkForUser,  */UserController.createUser, (req, res) => {
+  // res.redirect to route
+  return res.status(200).json(res.locals.newUser);
+});
+
+// User Login
+app.post('/login', UserController.verifyUser, (req, res) => {
+  return res.status(200).json(res.locals.foundUser);
+})
+
+
 app.use('/api/workouts', workoutApi);
+
+
+
 // 404 handler, catch-all error-handler
 app.use('*', (req, res) => {
     return res

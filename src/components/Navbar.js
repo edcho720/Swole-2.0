@@ -26,6 +26,8 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
                     Swole
                     </div>
 
+                    {user && <h6>Welcome {user.name}</h6>}
+
                     <div id='icon-div'>
                         <Tooltip title={darkModeOn ? 'Light Mode' : 'Dark Mode'} arrow placement='bottom'>
                             <IconButton 
