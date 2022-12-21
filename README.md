@@ -32,10 +32,10 @@ New Features:
 
 Security: A login system that securely hashes passwords and stores them in the database has been integrated into the app's feature set as well as form validation on the signup and login page.
 
+Bcrypt: Implemented bcrypt and a salt in a Node.js server using JavaScript to securely hash user passwords for user authentication and add an additional layer of security, preventing attacks such as brute force and dictionary attacks.
+
 Future Goals:
 
 Testing: 
-
-Bcrypt:
 
 OAuth: We would also like to implement OAuth to allow users to login using their Google or Facebook accounts. This would allow users to login to the application without having to create a new account and would also allow them to login to the application from any device without having to remember their password. We feel this would be a great improvement for the user experience.
