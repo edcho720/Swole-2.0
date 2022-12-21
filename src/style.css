@@ -15,7 +15,7 @@ html, body {
     padding-top: 300px;
 }
 .body2 {
-    background: hsl(323 21% 16%);
+    background: #2C3333;/* hsl(323 21% 16%) 2C3333 2C3639 */
     padding-top: 300px;
 }
 
@@ -101,7 +101,7 @@ html, body {
     margin-left: 0px;
 }
 .form2 {
-    background: hsl(323 21% 16%);
+    background: #2C3333;
     padding-top: 50px;
     width:100%;
     margin-right: 0px;
@@ -206,7 +206,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: hsl(323 21% 16%);
+    background: #2C3333;
     padding-top: 25px;
     padding-bottom: 1000px;
     width: 100%;
@@ -568,7 +568,7 @@ input.input-error, select.input-error {
     padding-top: 25px;
 }
 .summary2 {
-    background: hsl(323 21% 16%);
+    background: #2C3333;
     padding-top: 25px;
 }
 .summary-card{
@@ -647,7 +647,7 @@ input.input-error, select.input-error {
     padding-top: 200px;
 }
 .timer2 {
-    background: hsl(323 21% 16%);
+    background: #2C3333;
     padding-top: 200px;
 }
 
@@ -688,7 +688,7 @@ input.input-error, select.input-error {
 
 
 .main{
-    background-color: hsl(323 21% 16%);
+    background-color: #2C3333;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -743,7 +743,7 @@ input.input-error, select.input-error {
     };
 
     .timer2 {
-        background: hsl(323 21% 16%);
+        background: #2C3333;
         padding-top: 100px;
     };
 

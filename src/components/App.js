@@ -60,7 +60,7 @@ function App() {
               
               <div>
 
-                <Navbar darkModeOn={darkModeOn} toggleDarkMode={toggleDarkMode}/>
+                <Navbar darkModeOn={darkModeOn} toggleDarkMode={toggleDarkMode} user={user} />
 
                 {!user && 
 
@@ -69,15 +69,23 @@ function App() {
                   <Route 
                     path='/' 
                     element={<Login 
-                    darkModeOn={darkModeOn} 
+                    darkModeOn={darkModeOn}
+
                     onClick={goToMain}/>} 
+
+                    user={user}
+                    setUser={setUser}
                   /> 
 
                   <Route 
                     path='/signup' 
                     element={<Signup 
-                    darkModeOn={darkModeOn} 
+                    darkModeOn={darkModeOn}
+
                     onClick={goToMain}/>} 
+
+                    user={user}
+                    setUser={setUser}
                   /> 
 
                 </Routes>}

@@ -18,11 +18,10 @@ function Login(props) {
         navigate('/signup')
       }
 
-    // onSubmit or Login handler function -> add Authentication logic here
+    // onSubmit or Login handler function
     const onSubmit = async (values, actions) => {
         
-        // below is just a mock API call for testing, add logic for AUTH here later...
-        await new Promise((resolve) => {
+        // await new Promise((resolve) => {
             //fetch request to backend to authorize 
             fetch('/login', {
                 method: 'POST',
@@ -34,24 +33,35 @@ function Login(props) {
                     }
                 ),
                 })
+
                 .then(res => res.json())
+
 				.then(res => {
+
 					const { email } = res;
+
 					if (email){
-					const userObj = { name: email, email: email}
-					setUser(userObj)
+
+						const userObj = { name: email, email: email};
+
+						setUser(userObj);// sets user object and logs in the user
+
 					} else {
+
 						alert('Login Unsuccessful')
 						return;
+
 					}
 				})
                 .catch(error => {
-					alert('Error logging in')
+
+					alert('Error logging in');
+
 				})
 				
             //once we get object back, set the user to the object
-            setTimeout(resolve, 1000);
-        });
+            // setTimeout(resolve, 1000);
+        // });
         actions.resetForm(); // resets form fields 
     };
 

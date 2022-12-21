@@ -17,41 +17,53 @@ function Signup(props) {
     //     navigate('/signup')
     //   }
 
-    // onSubmit or Login handler function -> add Authentication logic here
-    const onSubmit = async (values, actions) => {
-        
-        // below is just a mock API call for testing, add logic for AUTH here later...
-        await new Promise((resolve) => {
-            //fetch request to backend to authorize 
-            fetch('/login', {
-                method: 'POST',
-                headers:{'content-type':'application/json'},
-                body: JSON.stringify(
-                    {
-                    email: values.email,
-                    password: values.password,
-                    }
-                ),
-                })
-                .then(res => res.json())
-				.then(res => {
-					const { email } = res;
-					if (email){
-					const userObj = { name: email, email: email}
-					setUser(userObj)
-					} else {
-						alert('Login Unsuccessful')
-						return;
-					}
-				})
-                .catch(error => {
-					alert('Error logging in')
-				})
-				
-            //once we get object back, set the user to the object
-            setTimeout(resolve, 1000);
-        });
-        actions.resetForm(); // resets form fields 
+    // onSubmit handler function
+
+    function onSubmit(){
+
+    // const onSubmit = async (values, actions) => {
+
+		// below is just a mock API call for testing, add logic for AUTH here later...
+		// await new Promise((resolve) => {
+            //fetch request to backend to register email & password
+				fetch('/register', {
+					method: 'POST',
+					headers:{'content-type':'application/json'},
+					body: JSON.stringify(
+						{
+						email: values.email,
+						password: values.password,
+						}
+					),
+					})
+
+					.then(res => res.json())
+
+					.then(res => {
+
+						const { email } = res;
+
+						if (email){
+
+							const userObj = { name: email, email: email };
+
+							alert('User Created');
+
+							setUser(userObj); // automtically signs in the user and routes to main
+
+							} else {
+
+								alert('Username Unavailable');
+								return;
+
+							}
+					})
+					.catch(error => console.log(error))
+
+		// 	setTimeout(resolve, 1000);
+		// });
+		console.log(user)
+		actions.resetForm(); // resets form fields
     };
 
 	const {
