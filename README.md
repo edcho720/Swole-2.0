@@ -1,18 +1,19 @@
-SWOLE 2.0
 
-Credits:
+# Swole 2.0
 
-Ed Cho : (https://github.com/edcho720)
+Swole is a mobile-ready web application that allows users to keep track of their workouts. This allows users to have an overview of all of their workouts and to keep a detailed history of their performance for each exercise. The goal is to help users achieve progressive overload by maintaining an accurate record of their previous workout sessions. Users are able to record the number of sets, reps and rest periods between each of their exercises. Swole also has an integrated timer feature to track the duration of your workouts as well as the rest intervals between each exercise.
 
-Motivations:
+
+
+
+## Motivation
 
 One of the core principles of any type of physical training is the science of progressive overload. The key to making sure you are consistently pushing yourself and improving your performance over time is to meticulously keep track of performnace. Swole is a fitness tracking tool that helps users keep track of their workout preformance when lifting weights.
+## Tech Stack
 
-Description:
+**Client:** React.js, SASS, Material UI 
 
-Swole is a mobile-ready web application that allows users to keep track of their workouts. This allows users to have an overview of all of their workouts and to keep a detailed history of their performance for each exercise. The goal is to help users achieve progressive overload by maintaining an accurate record of their previous workout sessions. Users are able to record the number of sets, reps and rest periods between each of their exercises. Swole also has an integrated timer feature to track the duration of your workouts as well as the rest intervals between each exercise. 
-
-Technologies:
+**Server:** Node.js, Express, NoSQL database (MongoDB), Mongoose
 
 This project was built utilizing a combination of the following technologies: React.js, Node.js, Express, NoSQL database (MongoDB), Mongoose and Webpack.
 
@@ -27,15 +28,83 @@ MongoDB was used to create a cloud-based NoSQL database for this application due
 Webpack was used to bundle the application as it allowed us to build an efficient and modular base for the application. It allowed us to use a variety of loaders to handle different file types and it also provided us with the ability to use plugins to optimize the application for production.
 
 Babel was used to transpile the application as it allowed us to use the latest version of JavaScript and utilize features such as arrow functions and async/await. It also allowed us to use the latest version of React and JSX.
+## Features
 
-New Features:
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Cross platform
+
+
+## New Features
 
 Security: A login system that securely hashes passwords and stores them in the database has been integrated into the app's feature set as well as form validation on the signup and login page.
 
 Bcrypt: Implemented bcrypt and a salt in a Node.js server using JavaScript to securely hash user passwords for user authentication and add an additional layer of security, preventing attacks such as brute force and dictionary attacks.
+## Future Goals
 
-Future Goals:
-
-Testing: 
+**Testing:**
 
 OAuth: We would also like to implement OAuth to allow users to login using their Google or Facebook accounts. This would allow users to login to the application without having to create a new account and would also allow them to login to the application from any device without having to remember their password. We feel this would be a great improvement for the user experience.
+## Authors
+
+- [@edcho720](https://www.github.com/edcho720)
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://zeusk8.io/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edcho720)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+
+
+![Logo]()
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/edcho720/Swole-2.0.git
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+
+## Demo
+
+Insert gif or link to demo
+
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+
