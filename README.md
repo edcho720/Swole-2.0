@@ -14,8 +14,6 @@ One of the core principles of any type of physical training is the science of pr
 
 ## Tech Stack
 
-<br>
-
 ### For Front-end development
 
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
@@ -23,15 +21,11 @@ One of the core principles of any type of physical training is the science of pr
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
 
-<br>
-
 ### For Back-end development
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-
-<br>
 
 This project was built utilizing a combination of the following technologies: React.js, Node.js, Express, NoSQL database (MongoDB), Mongoose and Webpack.
 
@@ -46,13 +40,13 @@ MongoDB was used to create a cloud-based NoSQL database for this application due
 Webpack was used to bundle the application as it allowed us to build an efficient and modular base for the application. It allowed us to use a variety of loaders to handle different file types and it also provided us with the ability to use plugins to optimize the application for production.
 
 Babel was used to transpile the application as it allowed us to use the latest version of JavaScript and utilize features such as arrow functions and async/await. It also allowed us to use the latest version of React and JSX.
+
 ## Features
 
 - Light/dark mode toggle
 - Live previews
 - Fullscreen mode
 - Cross platform
-
 
 ## New Features
 
@@ -64,18 +58,16 @@ Bcrypt: Implemented bcrypt and a salt in a Node.js server using JavaScript to se
 **Testing:**
 
 OAuth: We would also like to implement OAuth to allow users to login using their Google or Facebook accounts. This would allow users to login to the application without having to create a new account and would also allow them to login to the application from any device without having to remember their password. We feel this would be a great improvement for the user experience.
+
 ## Authors
 
-- [@edcho720](https://www.github.com/edcho720)
-
+- Ed Cho [LinkedIn](https://www.linkedin.com/in/edcho720/) | [GitHub](https://github.com/edcho720)
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://zeusk8.io/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edcho720)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/CyberHusky7)
 
-
-![Logo]()
 ## Run Locally
 
 Clone the project
@@ -111,7 +103,6 @@ To run tests, run the following command
   npm run test
 ```
 
-
 ## Demo
 
 Insert gif or link to demo
@@ -119,11 +110,5 @@ Insert gif or link to demo
 ## Badges
 
 ![osLabs](https://badgen.net/badge/license/MIT)
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 
