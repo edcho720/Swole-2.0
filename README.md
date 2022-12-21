@@ -1,25 +1,43 @@
 
-# Swole 2.0
+# 💪🏼 Swole 2.0 💪🏼
+
+<center><img src="./logo/swole-high-resolution-color-logo.png" width="200" height="150" id="readme-top"></center>
 
 Swole is a mobile-ready web application that allows users to keep track of their workouts. This allows users to have an overview of all of their workouts and to keep a detailed history of their performance for each exercise. The goal is to help users achieve progressive overload by maintaining an accurate record of their previous workout sessions. Users are able to record the number of sets, reps and rest periods between each of their exercises. Swole also has an integrated timer feature to track the duration of your workouts as well as the rest intervals between each exercise.
 
-
+![version](https://badgen.net/badge/version/v2.0.0)
 
 
 ## Motivation
 
 One of the core principles of any type of physical training is the science of progressive overload. The key to making sure you are consistently pushing yourself and improving your performance over time is to meticulously keep track of performnace. Swole is a fitness tracking tool that helps users keep track of their workout preformance when lifting weights.
+
 ## Tech Stack
 
-**Client:** React.js, SASS, Material UI 
+<br>
 
-**Server:** Node.js, Express, NoSQL database (MongoDB), Mongoose
+### For Front-end development
+
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
+
+<br>
+
+### For Back-end development
+
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+
+<br>
 
 This project was built utilizing a combination of the following technologies: React.js, Node.js, Express, NoSQL database (MongoDB), Mongoose and Webpack.
 
 React was utilized to create the front end of the application as it was thought to be an efficient and lightweight method of providing seamless functionality and a responsive user interface. It allows for a great deal of modularity through reusable components and, with the aid of React Hooks and the Context API, it was quite easy to manage state and pass the necessary data between components.
 
-Sass was used to style the application as it allowed for a more efficient and organized way of styling components compared to traditional CSS. It provided us with the ability to use variables and mixins which made it easier to maintain a consistent theme throughout the application that helped users differentiate between the various components for a better user experience.
+Material UI was used to style the application as it allowed for a more efficient and organized way of styling components compared to traditional CSS. It provided us with the ability to use variables and mixins which made it easier to maintain a consistent theme throughout the application that helped users differentiate between the various components for a better user experience.
 
 Node.js and Express were used to build out the back end of the application due to their ability to handle asynchronous requests and their ability to provide a robust framework for building out the server. The use of these technologies allowed us to create a RESTful API that could be used to interact with the NoSQL database for efficient and sensible management of user data.
 
@@ -54,7 +72,7 @@ OAuth: We would also like to implement OAuth to allow users to login using their
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://zeusk8.io/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edcho720)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/CyberHusky7)
 
 
 ![Logo]()
@@ -98,8 +116,9 @@ To run tests, run the following command
 
 Insert gif or link to demo
 
-
 ## Badges
+
+![osLabs](https://badgen.net/badge/license/MIT)
 
 Add badges from somewhere like: [shields.io](https://shields.io/)
 
