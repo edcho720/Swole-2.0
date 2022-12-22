@@ -167,6 +167,7 @@ function Login(props) {
 									<div className="login-buttons">
 										
 										<button 
+											role='login-button'
 											type='submit' 
 											disabled={isSubmitting} 
 											id={darkModeOn ? "login-button" : "login-button2"}
