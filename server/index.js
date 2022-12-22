@@ -19,8 +19,6 @@ const workoutApi = require('./routes/workouts');
 
 const UserController = require('./controllers/UserController');
 
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -38,10 +36,7 @@ app.post('/login', UserController.verifyUser, (req, res) => {
   return res.status(200).json(res.locals.foundUser);
 })
 
-
 app.use('/api/workouts', workoutApi);
-
-
 
 // 404 handler, catch-all error-handler
 app.use('*', (req, res) => {

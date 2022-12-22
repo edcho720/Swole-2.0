@@ -1,9 +1,11 @@
 import React from 'react';
-import { Grid, Card } from '@mui/material';
+import { Grid } from '@mui/material';
+
+/* renders 5 static form cards */
 
 function FormCard(props) {
 
-const { formData, handleChange, darkModeOn } = props
+const { formData, handleChange, darkModeOn } = props;
 
   return (
 
@@ -734,6 +736,7 @@ const { formData, handleChange, darkModeOn } = props
     </Grid>
     
   )
+
 };
 
 export default FormCard;

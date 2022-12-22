@@ -1,14 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Summary from './Summary'
 import FormCard from './FormCard'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import css from '../style.css';
 
 function Form(props) {
 
     const navigate = useNavigate();
 
-    const { timerOn, timer, showTimer, startTimer, endTimer, resetTimer, toggle, darkModeOn, toggleDarkMode } = props;
+    const { 
+        timerOn, 
+        timer, 
+        showTimer, 
+        startTimer, 
+        endTimer, 
+        resetTimer, 
+        toggle, 
+        darkModeOn, 
+        toggleDarkMode 
+    } = props;
 
     const [formData, setFormData] = useState(
 
@@ -68,7 +78,6 @@ function Form(props) {
 
     const [ timer1, setTimer1 ] = useState(0)
 
-
     function startWorkout(e) {
         e.preventDefault()
         const startD = new Date().toDateString();
@@ -100,7 +109,6 @@ function Form(props) {
                 )
         });
     };
-
 
     function handleChange(e) {
         const {name, value, type, checked} = e.target;
@@ -206,6 +214,8 @@ function Form(props) {
   return (
 
             <div className={darkModeOn ? 'main' : 'main2'}>
+
+                {/* Timer */}
                 
                 <div className={darkModeOn ? 'timer2' : 'timer'} >
 
@@ -226,9 +236,13 @@ function Form(props) {
 
                 </div>
 
+                {/* Form cards */}
+
                 <div className={darkModeOn ? 'form2' : 'form'}>
 
                     <form className="form-display" onSubmit={endWorkout}>
+
+                        {/* Start button */}
 
                         <button 
                             className="button-style" 
@@ -236,13 +250,19 @@ function Form(props) {
                         >Start Workout
                         </button>
 
+                        {/* 5 static form cards */}
+
                         <div>
-                        <FormCard 
-                            formData={formData} 
-                            handleChange={handleChange} 
-                            darkModeOn={darkModeOn} 
-                        />
+
+                            <FormCard 
+                                formData={formData} 
+                                handleChange={handleChange} 
+                                darkModeOn={darkModeOn} 
+                            />
+
                         </div>
+
+                        {/* End workout button */}
 
                         <button 
                             className="button-style" 
@@ -255,21 +275,25 @@ function Form(props) {
 
                     <hr></hr>
 
+                    {/* Workout summary card */}
+
                     <div id="summary-box">
 
-                    <Summary 
-                        className="history-card" 
-                        formData={formData} 
-                        time={time} 
-                        saveWorkout={handleSave} 
-                        darkModeOn={darkModeOn}
-                    />
+                        <Summary 
+                            className="history-card" 
+                            formData={formData} 
+                            time={time} 
+                            saveWorkout={handleSave} 
+                            darkModeOn={darkModeOn}
+                        />
 
                     </div>
 
                 </div>
+                
             </div>
   )
+  
 };
 
 export default Form;

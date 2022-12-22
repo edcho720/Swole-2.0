@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import Workouts from './Workouts';
-import Form from './Form';
+import Form from './Main';
 import Login from './Login';
 import Signup from './Signup';
 import Navbar from './Navbar';
@@ -10,13 +10,13 @@ import css from '../style.css';
 
 function App() {
 
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState(0);// timer state
 
-  const [ timerOn, setTimerOn ] = useState(false);
+  const [ timerOn, setTimerOn ] = useState(false);// timer state 
 
   const [toggle, setToggle] = useState(false);
 
-  const [ darkModeOn, setDarkModeOn ] = useState(true);
+  const [ darkModeOn, setDarkModeOn ] = useState(true);// dark mode 
 
   const [ user, setUser ] = useState(null); // user defaulted to null until a user logs in
 
@@ -48,6 +48,7 @@ function App() {
     setTimerOn(false)
     setTimer(old => null); 
   };
+
   const navigate = useNavigate()
 
   function goToMain() {
@@ -60,7 +61,11 @@ function App() {
               
               <div>
 
+                {/* the header is always rendered on the page */}
+
                 <Navbar darkModeOn={darkModeOn} toggleDarkMode={toggleDarkMode} user={user} />
+
+                {/* when a user is not logged in, only the login and sginup page are available to view */}
 
                 {!user && 
 
@@ -89,6 +94,8 @@ function App() {
                   /> 
 
                 </Routes>}
+
+                {/* once user logs in a new set of routes are available */}
 
                 {user && 
                 

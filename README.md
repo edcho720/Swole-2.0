@@ -1,7 +1,7 @@
 
 # 💪🏼 Swole 2.0 💪🏼
 
-<center><img src="./__test__/logo/swole-high-resolution-color-logo.png" width="200" height="150" id="readme-top"></center>
+<center><img src="./media/swole-high-resolution-color-logo.png" width="200" height="150" id="readme-top"></center>
 
 Swole is a mobile-ready web application that allows users to keep track of their workouts. This allows users to have an overview of all of their workouts and to keep a detailed history of their performance for each exercise. The goal is to help users achieve progressive overload by maintaining an accurate record of their previous workout sessions. Users are able to record the number of sets, reps and rest periods between each of their exercises. Swole also has an integrated timer feature to track the duration of your workouts as well as the rest intervals between each exercise.
 

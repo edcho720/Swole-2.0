@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, Tooltip, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom'
 // import { useTheme } from '@mui/styles';
-import { Link, useNavigate } from 'react-router-dom'
+import { Box, AppBar, Toolbar, Tooltip, IconButton } from '@mui/material';
+
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import FitnessCenterTwoToneIcon from '@mui/icons-material/FitnessCenterTwoTone';
@@ -26,9 +27,14 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
                     Swole
                     </div>
 
-                    {user && <h6>Welcome {user.name}</h6>}
+                    {/* once user logs in, user data is available for use */}
+
+                    {user && <h6>Welcome {user.name} to Swole</h6>}
+
+                    {/* nav links / icons on far right of header */}
 
                     <div id='icon-div'>
+
                         <Tooltip title={darkModeOn ? 'Light Mode' : 'Dark Mode'} arrow placement='bottom'>
                             <IconButton 
                                 onClick={toggleDarkMode}
@@ -38,8 +44,12 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
                                 {darkModeOn ? <LightModeIcon></LightModeIcon> : <ModeNightIcon></ModeNightIcon>}
                             </IconButton>
                         </Tooltip>
+
+                    {/* the following icon/nav links are only shown when a user is logged in */}
                          
-                        <Link to="/main">
+                    {user && 
+                        
+                            <Link to="/main">
                         <Tooltip title='Main' arrow placement='bottom'>
                             <IconButton 
                                 color={darkModeOn ? 'inherit' :'white !important'} 
@@ -49,7 +59,11 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
                             </IconButton>
                         </Tooltip>
                         </Link>
+                        
+                    }
                      
+                    {user && 
+
                         <Link to="/history">
                         <Tooltip title='Workout History' arrow placement='bottom'>
                             <IconButton 
@@ -60,6 +74,10 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
                             </IconButton>
                         </Tooltip>
                         </Link>
+
+                     }
+
+                    {user &&
                       
                         <Link to={`${user ? '/' : ''}`}>
                         <Tooltip title='Logout' arrow placement='bottom'>
@@ -73,6 +91,9 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
                             </IconButton>
                         </Tooltip>
                         </Link>
+
+                    }
+
                     </div>
 
                 </Toolbar>

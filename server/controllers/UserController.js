@@ -5,9 +5,7 @@ const bcrypt = require('bcrypt');
 const { getListSubheaderUtilityClass } = require('@mui/material');
 const saltRounds = 10;
 
-
 const UserController = {};
-
 
 // middleware for creating a user document in the DB
 UserController.createUser = function(req, res, next) {
