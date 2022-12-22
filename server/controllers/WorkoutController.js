@@ -3,16 +3,6 @@ const mongoose = require('mongoose');
 
 const WorkoutController = {};
 
-// WorkoutController.getWorkout = function(req, res, next) {
-//     const workoutToFind = { id: req.params.id } // this may cause problems...
-//     Workout.find(workoutToFind)
-//         .then(result => {
-//             res.locals.workout = result;
-//             return next()
-//         })
-//         .catch(err => next(err));
-// };
-
 WorkoutController.getAllWorkouts = function(req, res, next) {
     Workout.find({})
         .then(result => {
@@ -21,7 +11,6 @@ WorkoutController.getAllWorkouts = function(req, res, next) {
         })
         .catch(err => next(err));
 };
-
 
 WorkoutController.createWorkout = function(req, res, next) {
     const {

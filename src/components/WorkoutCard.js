@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+/* renders each Workoout summary card for Workout History */
+
 function WorkoutCard(props) {
 
 const {
@@ -53,6 +55,7 @@ const {
   } = props.workoutData
 
 const [ editInfo, setEditInfo ] = useState({comments4: comments4});
+
 const [ editOn, setEditOn ] = useState(false);
 
 function handleChange(e) {
@@ -66,8 +69,6 @@ function handleChange(e) {
       )
   })
 };
-
-
 
 console.log('editInfo:', editInfo.comments4)
 console.log('workoutcard id', _id)
@@ -89,6 +90,7 @@ const navigate = useNavigate()
 // if(!props.workoutData) {
 //   return  <p>No workouts yet</p>
 // }
+
 function handleEdit(id) {
   console.log('edit fired!')
   setEditOn(true);
@@ -127,7 +129,7 @@ function handleUpdate(id) {
 
   return (
 
-    <div >
+    <div>
 
         <div className={darkModeOn ? "history-card2" : "history-card"}>
 

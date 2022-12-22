@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import WorkoutCard from './WorkoutCard';
 
+/* Workout History Page */
+
 function Workouts(props) {
 
   const { darkModeOn } = props;
 
-  const [fetchedWos, setFetchedWos] = useState([])
+  const [fetchedWos, setFetchedWos] = useState([]);
+
   const [ isFetching , setIsFetching ] = useState(true);
 
   const [ loop, setLoop ] = useState(true);
@@ -29,14 +32,6 @@ function Workouts(props) {
             setIsFetching(false);
 
 
-          // let allWorkouts = [];
-          // for(let i = fetchedWos.length - 1; i >= 0; i--) {
-          //   allWorkouts.push(fetchedWos[i])
-          // }
-
-
-
-
             allWorkouts = fetchedWos.map( wo => {
               return (
                 <WorkoutCard 
@@ -52,14 +47,17 @@ function Workouts(props) {
           console.log('GET req error on LOAD Error:', err)
         });
 
-        // setTimeout( ()=> location.reload(), 5000); /* will this work? */
+        // setTimeout( ()=> location.reload(), 5000);
 
-    }, [/* fetchedWos */] ); // runs only on first render, don't include it and it will run on every render
-    // you could try using the length property of the state data as what you put into the dependancy array
+    }, [/* fetchedWos */] ); 
+    // runs only on first render, don't include it and it will run on every render
 
     const fetchedData = fetchedWos.reverse();
+
     const dataWo = fetchedData.map( (wo, i) => {
+
       return (
+
         <WorkoutCard 
           key={wo._id}
           id={wo._id}
@@ -68,11 +66,14 @@ function Workouts(props) {
           // editWorkout={editWorkout}
           workoutData={wo}
         />
+
       )
+
     });
 
 
   function removeWorkout(id) {
+
       console.log('delete fired');
 
       fetch(`/api/workouts/${id}`, { method: 'DELETE' })
@@ -81,9 +82,13 @@ function Workouts(props) {
       .catch(err => console.log('Error:', err))
 
       setFetchedWos(old => {
+
       return (
+
         old.filter( old => old._id !== id )
+
       )
+      
       });
   };
 
