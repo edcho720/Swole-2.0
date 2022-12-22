@@ -59,7 +59,7 @@ function App() {
 
   return (
               
-              <div>
+              <div role='main-body'>
 
                 {/* the header is always rendered on the page */}
 

@@ -23,7 +23,7 @@ function Navbar({darkModeOn, toggleDarkMode, user}) {
 
                 <Toolbar sx={{ height: 150, display: 'flex', justifyContent: 'space-between' }}>
 
-                    <div className={darkModeOn ? 'logo-nav' : 'logo-nav2'} >
+                    <div role='nav-logo' className={darkModeOn ? 'logo-nav' : 'logo-nav2'} >
                     Swole
                     </div>
 
